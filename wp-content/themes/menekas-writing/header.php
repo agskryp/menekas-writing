@@ -26,7 +26,7 @@
 						<?php
 							the_custom_logo();
 						
-							if ( is_front_page() && is_home() ) {
+							if ( is_front_page() ) {
 						?>
 							<h1 class="site-title">
 								<a 
