@@ -20,14 +20,19 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-
 @use "generic/normalize";
 @use "generic/box-sizing";
 @use "utilities/accessibility";
+@use "utilities/global";
 
 
 // Pico styles
 @use "../node_modules/@picocss/pico/scss/pico";
 
+
 // Theme styles
 @use "theme/home-template";
+
+
+// Components
+@use "components/polaroid-carousel";

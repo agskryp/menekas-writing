@@ -1,5 +1,5 @@
 <footer id="colophon" class="site-footer">
-	<div class="site-info">
+	<div class="site-info text-center">
 		Menaka's Writing &copy; <?php echo get_the_date( 'Y' ); ?> Menaka Skrypnyk.  All rights reserved.
 		<span class="sep"> | </span>
 		<?php
