@@ -1,10 +1,20 @@
-.home-template-hero {
-	align-items: center;
+.home-template-page .site {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin: 0;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 	min-height: 100dvh;
+}
+
+.home-template-page .site-main {
+	display: grid;
+	min-height: 0;
+}
+
+.home-template-hero {
+	align-items: center;
+	margin: 0;
 	padding-block: var(--pico-spacing);
 	place-items: center;
 	width: 100%;
