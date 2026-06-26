@@ -49,6 +49,7 @@
 					</li>
 				</ul>
 				
+				<div>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
@@ -56,5 +57,15 @@
 						'container'      => false,
 					) );
 				?>
+
+				<button
+	type="button"
+	data-open-modal="contact-modal"
+	aria-haspopup="dialog"
+>
+	<?php esc_html_e( 'Contact', 'menekas-writing' ); ?>
+</button>
+</div>
+
 			</nav>
 		</header>
