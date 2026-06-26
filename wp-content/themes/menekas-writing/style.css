@@ -3188,6 +3188,20 @@ textarea,
     transition-duration: 0s !important;
   }
 }
+.site-header .site-title {
+  margin-bottom: 0;
+}
+.site-header .nav-container {
+  display: flex;
+  align-items: center;
+}
+.site-header .nav-container .main-menu {
+  display: inline-flex;
+}
+.site-header .nav-container button {
+  margin: 0 0 0 20px;
+}
+
 .home-template-hero {
   align-items: center;
   background-position: center;
