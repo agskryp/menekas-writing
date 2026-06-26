@@ -1,3 +1,11 @@
+<?php
+$contact_form_recaptcha = function_exists( 'menekas_writing_contact_recaptcha_enabled' ) && menekas_writing_contact_recaptcha_enabled();
+$contact_form_site_key  = function_exists( 'menekas_writing_contact_recaptcha_site_key' ) ? menekas_writing_contact_recaptcha_site_key() : '';
+?>
+
+<?php if ( $contact_form_recaptcha ) { ?>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<?php } ?>
 
 <dialog id="contact-modal">
 	<article>
@@ -11,7 +19,10 @@
 			<h2><?php esc_html_e( 'Contact', 'menekas-writing' ); ?></h2>
 		</header>
 
-		<form method="post">
+		<form id="contact-form" method="post" data-contact-form>
+			<?php wp_nonce_field( 'menekas_contact_form', 'menekas_contact_nonce' ); ?>
+			<input type="hidden" name="action" value="menekas_contact_form">
+
 			<div class="grid">
 				<label for="contact-name">
 					<?php esc_html_e( 'Name', 'menekas-writing' ); ?>
@@ -57,10 +68,20 @@
 			</label>
 
 			<footer>
-				<button type="submit">
+				<button
+					type="submit"
+					<?php if ( $contact_form_recaptcha ) { ?>
+						class="g-recaptcha"
+						data-sitekey="<?php echo esc_attr( $contact_form_site_key ); ?>"
+						data-callback="menekasWritingSubmitContactForm"
+						data-size="invisible"
+					<?php } ?>
+				>
 					<?php esc_html_e( 'Send', 'menekas-writing' ); ?>
 				</button>
 			</footer>
 		</form>
+
+		<p role="alert" data-contact-form-status hidden></p>
 	</article>
 </dialog>

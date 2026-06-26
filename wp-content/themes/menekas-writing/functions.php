@@ -74,3 +74,4 @@ function menekas_writing_setup() {
 add_action( 'after_setup_theme', 'menekas_writing_setup' );
 
 include_once get_template_directory() . '/lib/scripts.php';
+include_once get_template_directory() . '/lib/contact-form.php';
