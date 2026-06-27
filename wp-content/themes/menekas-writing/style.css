@@ -381,6 +381,10 @@ html {
   text-align: center;
 }
 
+.container-center {
+  justify-content: center;
+}
+
 /*!
  * Pico CSS ✨ v2.1.1 (https://picocss.com)
  * Copyright 2019-2025 - Licensed under MIT

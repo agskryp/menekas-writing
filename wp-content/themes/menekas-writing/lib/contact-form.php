@@ -22,7 +22,7 @@ if ( ! function_exists( 'amvs_writing_contact_recaptcha_enabled' ) ) {
 }
 
 if ( ! function_exists( 'amvs_writing_verify_contact_recaptcha' ) ) {
-	function amvs_writing_verify_contact_recaptcha( $token ) {
+	function amvs_writing_verify_contact_recaptcha( $token = '' ) {
 		if ( ! amvs_writing_contact_recaptcha_enabled() ) {
 			return true;
 		}
