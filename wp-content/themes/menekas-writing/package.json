@@ -14,24 +14,27 @@
     "npm-run-all": "^4.1.5",
     "sass": "^1.101.0"
   },
-	"scripts": {
-		"compile:sass": "sass sass/style.scss style.css --style=compressed",
-		"compile:home-js": "esbuild js/typed-text.js --bundle --minify --outfile=dist/home.js",
-		"compile:about-js": "esbuild js/polaroid-carousel.js --minify --outfile=dist/about.js",
-		"compile:main-js": "esbuild js/contact-form.js --minify --outfile=dist/main.js",
-		"compile": "npm-run-all --parallel compile:sass compile:typed-js compile:polaroid-js",
-		"watch:sass": "sass --watch sass/style.scss style.css --style=expanded",
-		"watch:home-js": "esbuild --watch js/typed-text.js --bundle --minify --outfile=dist/home.js",
-		"watch:about-js": "esbuild --watch js/polaroid-carousel.js --minify --outfile=dist/about.js",
-		"watch:main-js": "esbuild --watch js/contact-form.js --minify --outfile=dist/main.js",
-		"watch": "npm-run-all --parallel watch:sass watch:home-js watch:about-js watch:main-js"
-	},
+  "scripts": {
+    "compile:sass": "sass sass/style.scss style.css --style=compressed",
+    "compile:home-js": "esbuild js/typed-text.js --bundle --minify --outfile=dist/home.js",
+    "compile:about-js": "esbuild js/polaroid-carousel.js --minify --outfile=dist/about.js",
+    "compile:portfolio-js": "esbuild js/writings-filter.js --bundle --minify --outfile=dist/portfolio.js",
+    "compile:main-js": "esbuild js/contact-form.js --minify --outfile=dist/main.js",
+    "compile": "npm-run-all --parallel compile:sass compile:typed-js compile:polaroid-js",
+    "watch:sass": "sass --watch sass/style.scss style.css --style=expanded",
+    "watch:home-js": "esbuild --watch js/typed-text.js --bundle --minify --outfile=dist/home.js",
+    "watch:about-js": "esbuild --watch js/polaroid-carousel.js --minify --outfile=dist/about.js",
+    "watch:portfolio-js": "esbuild --watch js/writings-filter.js --bundle --minify --outfile=dist/portfolio.js",
+    "watch:main-js": "esbuild --watch js/contact-form.js --minify --outfile=dist/main.js",
+    "watch": "npm-run-all --parallel watch:sass watch:home-js watch:about-js watch:portfolio-js watch:main-js"
+  },
   "allowScripts": {
     "@parcel/watcher@2.5.6": true,
     "esbuild@0.28.1": true
   },
   "dependencies": {
     "@picocss/pico": "^2.1.1",
+    "isotope-layout": "^3.0.6",
     "typed.js": "^3.0.0"
   }
 }

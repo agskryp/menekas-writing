@@ -35,6 +35,12 @@
 			);
 		}	
 
+		if( is_page_template( 'template-portfolio.php' ) ) {
+			wp_enqueue_script( 
+				'amvs-writing-portfolio-scripts', get_template_directory_uri() . '/dist/portfolio.js', array(), $theme_ver, true 
+			);
+		}	
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
