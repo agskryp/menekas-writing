@@ -75,3 +75,4 @@ add_action( 'after_setup_theme', 'amvs_writing_setup' );
 
 include_once get_template_directory() . '/lib/scripts.php';
 include_once get_template_directory() . '/lib/contact-form.php';
+include_once get_template_directory() . '/lib/post-type.php';
