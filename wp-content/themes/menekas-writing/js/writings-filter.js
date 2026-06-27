@@ -1,6 +1,6 @@
 import Isotope from 'isotope-layout';
 
-const grid = document.querySelector( '.grid' );
+const grid = document.querySelector( '.portfolio-list-grid' );
 const filters = document.querySelectorAll( '[data-filter]' );
 
 if ( grid ) {

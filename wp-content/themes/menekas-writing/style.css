@@ -3232,6 +3232,37 @@ textarea,
   text-align: center;
 }
 
+.amvs-portfolio-container .portfolio-list-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .amvs-portfolio-container .portfolio-list-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.amvs-portfolio-container article {
+  height: 100%;
+  margin: 0;
+  background: transparent;
+}
+.amvs-portfolio-container article.grid-item {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .amvs-portfolio-container article.grid-item {
+    width: 33.3333333333%;
+  }
+}
+.amvs-portfolio-container article a {
+  background: green;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
 .polaroid-container {
   position: relative;
   width: 340px;
