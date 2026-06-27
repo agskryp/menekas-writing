@@ -7,7 +7,7 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function menekas_writing_setup() {
+function amvs_writing_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -30,7 +30,7 @@ function menekas_writing_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'menekas-writing' ),
+			'menu-1' => esc_html__( 'Primary', 'amvs-writing' ),
 		)
 	);
 
@@ -71,7 +71,7 @@ function menekas_writing_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'menekas_writing_setup' );
+add_action( 'after_setup_theme', 'amvs_writing_setup' );
 
 include_once get_template_directory() . '/lib/scripts.php';
 include_once get_template_directory() . '/lib/contact-form.php';

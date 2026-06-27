@@ -1,6 +1,6 @@
 <?php
-$contact_form_recaptcha = function_exists( 'menekas_writing_contact_recaptcha_enabled' ) && menekas_writing_contact_recaptcha_enabled();
-$contact_form_site_key  = function_exists( 'menekas_writing_contact_recaptcha_site_key' ) ? menekas_writing_contact_recaptcha_site_key() : '';
+$contact_form_recaptcha = function_exists( 'amvs_writing_contact_recaptcha_enabled' ) && amvs_writing_contact_recaptcha_enabled();
+$contact_form_site_key  = function_exists( 'amvs_writing_contact_recaptcha_site_key' ) ? amvs_writing_contact_recaptcha_site_key() : '';
 ?>
 
 <?php if ( $contact_form_recaptcha ) { ?>
@@ -12,20 +12,20 @@ $contact_form_site_key  = function_exists( 'menekas_writing_contact_recaptcha_si
 		<header>
 			<button
 				type="button"
-				aria-label="<?php esc_attr_e( 'Close contact form', 'menekas-writing' ); ?>"
+				aria-label="<?php esc_attr_e( 'Close contact form', 'amvs-writing' ); ?>"
 				rel="prev"
 				data-close-modal
 			></button>
-			<h2><?php esc_html_e( 'Contact', 'menekas-writing' ); ?></h2>
+			<h2><?php esc_html_e( 'Let\'s Connect!', 'amvs-writing' ); ?></h2>
 		</header>
 
 		<form id="contact-form" method="post" data-contact-form>
-			<?php wp_nonce_field( 'menekas_contact_form', 'menekas_contact_nonce' ); ?>
-			<input type="hidden" name="action" value="menekas_contact_form">
+			<?php wp_nonce_field( 'amvs_contact_form', 'amvs_contact_nonce' ); ?>
+			<input type="hidden" name="action" value="amvs_contact_form">
 
 			<div class="grid">
 				<label for="contact-name">
-					<?php esc_html_e( 'Name', 'menekas-writing' ); ?>
+					<?php esc_html_e( 'Name', 'amvs-writing' ); ?>
 					<input
 						type="text"
 						id="contact-name"
@@ -36,7 +36,7 @@ $contact_form_site_key  = function_exists( 'menekas_writing_contact_recaptcha_si
 				</label>
 
 				<label for="contact-email">
-					<?php esc_html_e( 'Email', 'menekas-writing' ); ?>
+					<?php esc_html_e( 'Email', 'amvs-writing' ); ?>
 					<input
 						type="email"
 						id="contact-email"
@@ -47,18 +47,8 @@ $contact_form_site_key  = function_exists( 'menekas_writing_contact_recaptcha_si
 				</label>
 			</div>
 
-			<label for="contact-subject">
-				<?php esc_html_e( 'Subject', 'menekas-writing' ); ?>
-				<input
-					type="text"
-					id="contact-subject"
-					name="contact_subject"
-					required
-				>
-			</label>
-
 			<label for="contact-message">
-				<?php esc_html_e( 'Message', 'menekas-writing' ); ?>
+				<?php esc_html_e( 'Message', 'amvs-writing' ); ?>
 				<textarea
 					id="contact-message"
 					name="contact_message"
@@ -73,11 +63,11 @@ $contact_form_site_key  = function_exists( 'menekas_writing_contact_recaptcha_si
 					<?php if ( $contact_form_recaptcha ) { ?>
 						class="g-recaptcha"
 						data-sitekey="<?php echo esc_attr( $contact_form_site_key ); ?>"
-						data-callback="menekasWritingSubmitContactForm"
+						data-callback="amvsWritingSubmitContactForm"
 						data-size="invisible"
 					<?php } ?>
 				>
-					<?php esc_html_e( 'Send', 'menekas-writing' ); ?>
+					<?php esc_html_e( 'Send', 'amvs-writing' ); ?>
 				</button>
 			</footer>
 		</form>

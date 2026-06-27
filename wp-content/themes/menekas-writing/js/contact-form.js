@@ -72,8 +72,8 @@
 			return response.data.message;
 		}
 
-		return window.menekasContactForm && window.menekasContactForm.genericErrorMessage ?
-			window.menekasContactForm.genericErrorMessage :
+		return window.amvsContactForm && window.amvsContactForm.genericErrorMessage ?
+			window.amvsContactForm.genericErrorMessage :
 			'The message could not be sent. Please try again later.';
 	}
 
@@ -83,13 +83,13 @@
 			return;
 		}
 
-		if ( window.menekasContactForm && window.menekasContactForm.submittingMessage ) {
-			setStatus( window.menekasContactForm.submittingMessage, false );
+		if ( window.amvsContactForm && window.amvsContactForm.submittingMessage ) {
+			setStatus( window.amvsContactForm.submittingMessage, false );
 		}
 
 		setSubmitting( true );
 
-		fetch( window.menekasContactForm.ajaxUrl, {
+		fetch( window.amvsContactForm.ajaxUrl, {
 			method: 'POST',
 			credentials: 'same-origin',
 			body: new FormData( form ),
@@ -117,7 +117,7 @@
 			} );
 	}
 
-	window.menekasWritingSubmitContactForm = submitContactForm;
+	window.amvsWritingSubmitContactForm = submitContactForm;
 
 	form.addEventListener( 'submit', function( event ) {
 		event.preventDefault();
@@ -125,8 +125,8 @@
 		const recaptchaResponse = form.querySelector( '[name="g-recaptcha-response"]' );
 
 		if (
-			window.menekasContactForm &&
-			window.menekasContactForm.recaptchaEnabled &&
+			window.amvsContactForm &&
+			window.amvsContactForm.recaptchaEnabled &&
 			window.grecaptcha &&
 			( ! recaptchaResponse || ! recaptchaResponse.value )
 		) {

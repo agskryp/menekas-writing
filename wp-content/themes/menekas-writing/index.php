@@ -51,14 +51,14 @@ get_header();
 			?>
 			<div class="entry-meta">
 				<?php
-				// menekas_writing_posted_on();
-				// menekas_writing_posted_by();
+				// amvs_writing_posted_on();
+				// amvs_writing_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php // menekas_writing_post_thumbnail(); ?>
+	<?php // amvs_writing_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -66,7 +66,7 @@ get_header();
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'menekas-writing' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'amvs-writing' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -79,7 +79,7 @@ get_header();
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'menekas-writing' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'amvs-writing' ),
 				'after'  => '</div>',
 			)
 		);
@@ -87,7 +87,7 @@ get_header();
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php // menekas_writing_entry_footer(); ?>
+		<?php // amvs_writing_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 

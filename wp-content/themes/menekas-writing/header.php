@@ -17,7 +17,7 @@
 		<a 
 			class="skip-link screen-reader-text" 
 			href="#primary"
-		><?php esc_html_e( 'Skip to content', 'menekas-writing' ); ?></a>
+		><?php esc_html_e( 'Skip to content', 'amvs-writing' ); ?></a>
 
 		<header id="masthead" class="site-header">
 			<nav class="container">
@@ -64,7 +64,7 @@
 						data-open-modal="contact-modal"
 						aria-haspopup="dialog"
 					>
-						<?php esc_html_e( 'Contact', 'menekas-writing' ); ?>
+						<?php esc_html_e( 'Contact', 'amvs-writing' ); ?>
 					</button>
 				</div>
 			</nav>

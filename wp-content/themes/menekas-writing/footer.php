@@ -4,7 +4,7 @@
 		<span class="sep"> | </span>
 		<?php
 			printf( 
-				esc_html__( 'Site by %1$s', 'menekas-writing' ), 
+				esc_html__( 'Site by %1$s', 'amvs-writing' ), 
 				'<a href="https://www.agskryp.com" target="_blank" rel="noopener">A.G. Skryp</a>' 
 			);
 		?>
