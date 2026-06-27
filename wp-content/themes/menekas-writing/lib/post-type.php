@@ -38,5 +38,11 @@ function amvs_writing_register_portfolio_post_type() {
 	);
 
 	register_post_type( 'portfolio', $args );
+
+	add_rewrite_rule(
+		'^portfolio/([^/]+)/?$',
+		'index.php?post_type=portfolio&category_name=$matches[1]',
+		'top'
+	);
 }
 add_action( 'init', 'amvs_writing_register_portfolio_post_type' );

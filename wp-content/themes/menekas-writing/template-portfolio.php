@@ -52,7 +52,7 @@
 							<?php if ( ! empty( $portfolio_categories ) && ! is_wp_error( $portfolio_categories ) ) { ?>
 								<?php foreach ( $portfolio_categories as $portfolio_category ) { ?>
 									<li>
-											<a href="<?php echo esc_url( get_category_link( $portfolio_category->term_id ) ); ?>">
+										<a href="<?php echo esc_url( home_url( '/portfolio/' . $portfolio_category->slug . '/' ) ); ?>">
 											<?php echo esc_html( $portfolio_category->name ); ?>
 										</a>
 									</li>
