@@ -64,7 +64,7 @@
 					<li>
 						<a
 							href="<?= esc_url( home_url( '/portfolio/' . $portfolio_category -> slug . '/' ) ); ?>"
-							data-filter=".portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category->slug ) ); ?>"
+							data-filter=".portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category -> slug ) ); ?>"
 						>
 							<?php echo esc_html( $portfolio_category->name ); ?>
 						</a>
@@ -83,19 +83,23 @@
 						$portfolio_posts -> the_post();
 							
 						$portfolio_item_categories = get_the_terms( get_the_ID(), 'category' );
-						$portfolio_item_classes = array( 'grid-item' );
+						$portfolio_item_names 		 = array();
+						$portfolio_item_classes 	 = array( 'grid-item' );
 
 						if( !empty( $portfolio_item_categories ) && !is_wp_error( $portfolio_item_categories ) ) {
 							foreach ( $portfolio_item_categories as $portfolio_item_category ) {
 								$portfolio_item_classes[] = 'portfolio-category-' . sanitize_html_class( 
 									$portfolio_item_category -> slug 
 								);
+
+								$portfolio_item_names[] = esc_html( $portfolio_item_category -> name );
 							}
 						}
 			?>
 				<article class="<?php echo esc_attr( implode( ' ', $portfolio_item_classes ) ); ?>">
 					<a href="<?php the_permalink(); ?>">
 						<span><?php the_title(); ?></span>
+						<span><?php echo esc_html( implode( ' | ', $portfolio_item_names ) ); ?></span>
 					</a>
 				</article>
 			<?php 
