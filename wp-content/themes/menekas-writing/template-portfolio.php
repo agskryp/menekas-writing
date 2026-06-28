@@ -121,15 +121,15 @@
 								? 'rel="' . esc_attr( $portfolio_item_rel ) . '"' 
 								: ''; ?>
 					>
-						<span><?php the_title(); ?></span>
+						<header><?php the_title(); ?></header>
 						
 						<?php 
 							if( has_post_thumbnail() ) {
-								the_post_thumbnail( 'thumbnail' );
+								the_post_thumbnail( array( 280, 50 ) );
 							}
 						?>
 						
-						<span><?php echo esc_html( implode( ' | ', $portfolio_item_names ) ); ?></span>
+						<small><?php echo esc_html( implode( ' | ', $portfolio_item_names ) ); ?></small>
 					</a>
 				</article>
 			<?php 
