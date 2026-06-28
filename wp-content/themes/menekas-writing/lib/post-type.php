@@ -46,3 +46,39 @@ function amvs_writing_register_portfolio_post_type() {
 	);
 }
 add_action( 'init', 'amvs_writing_register_portfolio_post_type' );
+
+
+
+function amvs_writing_register_portfolio_metabox() {
+	if ( ! function_exists( 'new_cmb2_box' ) ) {
+		return;
+	}
+
+	$portfolio_metabox = new_cmb2_box( array(
+		'id'           => 'amvs_writing_metabox',
+		'title'        => esc_html__( 'Item Details', 'amvs-writing' ),
+		'object_types' => array( 'portfolio' ),
+		'context'      => 'normal',
+		'priority'     => 'default',
+	) );
+
+	$portfolio_metabox -> add_field( array(
+		'name' => esc_html__( 'Published URL', 'amvs-writing' ),
+		'desc' => 'Enter the URL this writing is published.',
+		'id'   => 'amvs_published_url',
+		'type' => 'text_url',
+	) );
+
+	$portfolio_metabox -> add_field( array(
+		'name'             => esc_html__( 'Is this writing still live?' ),
+		'desc'             => 'Select No if the URL page no longer exists.',
+		'id'               => 'amvs_live_page',
+		'type'             => 'select',
+		'default'          => 'yes',
+		'options'          => array(
+			'yes' => __( 'Yes', 'cmb2' ),
+			'no'  => __( 'No', 'cmb2' ),
+		),
+	) );
+}
+add_action( 'cmb2_admin_init', 'amvs_writing_register_portfolio_metabox' );
