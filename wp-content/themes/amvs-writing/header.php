@@ -1,6 +1,10 @@
+<?
+	$home_class = is_page_template( 'template-home.php' ) ? ' home-page-container' : '';
+?>
+
 <!doctype html>
 
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> data-theme="light">
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -13,7 +17,7 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	<div id="page" class="site">
+	<div id="page" class="site<?php echo $home_class; ?>">
 		<a 
 			class="skip-link screen-reader-text" 
 			href="#primary"

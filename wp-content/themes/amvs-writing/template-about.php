@@ -12,7 +12,7 @@
 			while ( have_posts() ) {
 				the_post();
 	?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class( 'grid' ); ?> >
+		<div id="post-<?php the_ID(); ?>" <?php post_class( 'container grid' ); ?> >
 			<div class="photo-content">
 				<div class="polaroid-container" id="carousel">
 						<div class="polaroid active">
