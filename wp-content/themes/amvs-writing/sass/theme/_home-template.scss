@@ -13,15 +13,14 @@
 }
 
 .home-template-hero {
-	align-items: center;
 	margin: 0;
 	padding-block: var(--pico-spacing);
-	place-items: center;
+	place-items: center flex-start;
 	width: 100%;
-	height: 80vh;
+	max-width: 992px;
+	margin: 0 auto;
 
 	.entry-content {
 		margin: 0;
-		text-align: center;
 	}
 }

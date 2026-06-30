@@ -7,7 +7,6 @@ $primary: #B28D15;
 $primary-hover: #906B03;
 $secondary: #FFEBC9;
 $secondary-hover: #FEC9A7;
-$muted: #665544;
 
 
 [data-theme=light],
@@ -17,8 +16,8 @@ $muted: #665544;
   --pico-background-color: #{$background-color};
   --pico-color: #{$text-color};
   --pico-text-selection-color: rgba(#{$text-color}, 0.25);
-  --pico-muted-color: #{$muted};
-  --pico-muted-border-color: #{color.scale($muted, $lightness: +20%)};
+  --pico-muted-color: #{$secondary};
+  --pico-muted-border-color: #{color.scale($secondary, $lightness: +20%)};
   --pico-primary: #{$primary};
   --pico-primary-background: #{$primary};
   --pico-primary-underline: rgba(#{$primary}, 0.5);
@@ -52,7 +51,7 @@ $muted: #665544;
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: rgb(243, 244.5, 246.75);
-  --pico-code-color: #{$muted};
+  --pico-code-color: #{$secondary};
   --pico-form-element-background-color: rgb(251, 251.5, 252.25);
   --pico-form-element-selected-background-color: #dfe3eb;
   --pico-form-element-border-color: #cfd5e2;
@@ -63,6 +62,10 @@ $muted: #665544;
   --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
-  --pico-card-sectioning-background-color: rgb(251, 251.5, 252.25);
   --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
+	--pico-card-background-color: var(--pico-background-color);
+  --pico-card-border-color: var(--pico-muted-border-color);
+  --pico-card-box-shadow: var(--pico-box-shadow);
+  --pico-card-sectioning-background-color: #{$background-color};
+  
 }

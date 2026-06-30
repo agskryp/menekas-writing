@@ -46,9 +46,8 @@
 		?>
 
 		<nav
-			class="container container-center"
+			class="container container-center portfolio-list-filter"
 			aria-label="<?php esc_attr_e( 'Portfolio Categories', 'amvs-writing' ); ?>"
-			style="--pico-nav-breadcrumb-divider: '|';"
 		>
 			<ul>
 				<li>

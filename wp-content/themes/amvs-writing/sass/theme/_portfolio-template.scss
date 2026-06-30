@@ -1,6 +1,25 @@
 @use "../utilities/variables";
 
 .amvs-portfolio-container {
+	.portfolio-list-filter {
+		a {
+			background-color: variables.$primary;
+			font-weight: 500;
+			color: variables.$background-color;
+			margin: 0;
+			font-size: 16px;
+			min-width: 130px;
+    	text-align: center;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: variables.$primary-hover;
+				text-decoration: none;
+			}
+		}
+	}
+
 	.portfolio-list-grid {
 		display: grid;
 		gap: 20px;
@@ -30,6 +49,10 @@
 			@media (min-width: 1024px) {
 				width: calc(100% / 3);
 			}
+		}
+
+		header {
+			font-weight: 700;
 		}
 
 		a {

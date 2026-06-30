@@ -20,16 +20,6 @@
 		>
 			<div class="entry-content">
 				<?php the_content(); ?>
-
-				<div>
-					<span id="typed-strings">
-						<span>Hucky</span>
-						<span>Chucky</span>
-						<span>Lucky</span>
-						<span>Bucky</span>
-						</span>
-					<span class="element"></span>
-				</div>
 			</div>
 		</div>
 	<?php
@@ -37,7 +27,7 @@
 		}
 	?>
 
-	<div style="width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;  z-index: -1;">
+	<div style="width: 100%; height: 100vh; position: absolute; top: 0; left: 0;  z-index: -1; overflow: hidden;">
 		<div style="background: rgba( 255, 245, 235, .9); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;">
 		<img src="<?php echo $home_template_background; ?>" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; object-fit: cover;" alt="" />
 	</div>

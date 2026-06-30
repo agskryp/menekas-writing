@@ -21,10 +21,23 @@
 		
 		.main-menu {
 			display: inline-flex;
+
+			a {
+				color: variables.$text-color;
+				font-weight: 500;
+			}
 		}
 
 		button {
 			margin: 0 0 0 20px;
+			background-color: variables.$primary;
+			font-weight: 500;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: variables.$primary-hover;
+			}
 		}
 	}	
 }
