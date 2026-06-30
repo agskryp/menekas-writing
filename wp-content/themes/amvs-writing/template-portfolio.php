@@ -26,7 +26,7 @@
 
 	get_header();
 ?>	
-	<main id="primary" class="amvs-portfolio-container">
+	<main id="primary" class="main-container amvs-portfolio-container">
 		<?php
 			if ( have_posts() ) {
 				while ( have_posts() ) {

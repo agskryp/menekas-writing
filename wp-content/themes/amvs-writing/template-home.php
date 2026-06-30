@@ -8,7 +8,7 @@
 	get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="main-container">
 	<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {
@@ -38,7 +38,7 @@
 	?>
 
 	<div style="width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;  z-index: -1;">
-		<div style="background: rgba( 0, 0, 0, .6); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;">
+		<div style="background: rgba( 255, 245, 235, .9); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;">
 		<img src="<?php echo $home_template_background; ?>" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; object-fit: cover;" alt="" />
 	</div>
 </main>

@@ -3188,24 +3188,24 @@ textarea,
 :root:not([data-theme=dark]),
 :host(:not([data-theme=dark])) {
   color-scheme: light;
-  --pico-background-color: #fff9f3;
-  --pico-color: #ca9;
-  --pico-text-selection-color: rgba(#ca9, 0.25);
-  --pico-muted-color: #646b79;
-  --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #ca9;
-  --pico-primary-background: #ca9;
-  --pico-primary-underline: rgba(#ca9, 0.5);
-  --pico-primary-hover: primary-hover;
-  --pico-primary-hover-background: #02659a;
-  --pico-primary-focus: rgba(2, 154, 232, 0.5);
+  --pico-background-color: #FFFAF0;
+  --pico-color: #502700;
+  --pico-text-selection-color: rgba(#502700, 0.25);
+  --pico-muted-color: #665544;
+  --pico-muted-border-color: rgb(142.8, 119, 95.2);
+  --pico-primary: #B28D15;
+  --pico-primary-background: #B28D15;
+  --pico-primary-underline: rgba(#B28D15, 0.5);
+  --pico-primary-hover: #906B03;
+  --pico-primary-hover-background: rgb(115.2, 85.6, 2.4);
+  --pico-primary-focus: rgba(#906B03, 0.5);
   --pico-primary-inverse: #fff;
-  --pico-secondary: #5d6b89;
-  --pico-secondary-background: #525f7a;
-  --pico-secondary-underline: rgba(93, 107, 137, 0.5);
-  --pico-secondary-hover: #48536b;
-  --pico-secondary-hover-background: #48536b;
-  --pico-secondary-focus: rgba(93, 107, 137, 0.25);
+  --pico-secondary: #FFEBC9;
+  --pico-secondary-background: #FFEBC9;
+  --pico-secondary-underline: rgba(#FFEBC9, 0.5);
+  --pico-secondary-hover: #FEC9A7;
+  --pico-secondary-hover-background: rgb(253.0539325843, 149.9123595506, 83.7460674157);
+  --pico-secondary-focus: rgba(#FEC9A7, 0.5);
   --pico-secondary-inverse: #fff;
   --pico-contrast: #181c25;
   --pico-contrast-background: #181c25;
@@ -3214,19 +3214,19 @@ textarea,
   --pico-contrast-hover-background: #000;
   --pico-contrast-focus: rgba(93, 107, 137, 0.25);
   --pico-contrast-inverse: #fff;
-  --pico-h1-color: #2d3138;
-  --pico-h2-color: #373c44;
-  --pico-h3-color: #424751;
-  --pico-h4-color: #4d535e;
-  --pico-h5-color: #5c6370;
-  --pico-h6-color: #646b79;
+  --pico-h1-color: #502700;
+  --pico-h2-color: #502700;
+  --pico-h3-color: #502700;
+  --pico-h4-color: #502700;
+  --pico-h5-color: #502700;
+  --pico-h6-color: #502700;
   --pico-mark-background-color: rgb(252.5, 230.5, 191.5);
   --pico-mark-color: #0f1114;
   --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: rgb(243, 244.5, 246.75);
-  --pico-code-color: #646b79;
+  --pico-code-color: #665544;
   --pico-form-element-background-color: rgb(251, 251.5, 252.25);
   --pico-form-element-selected-background-color: #dfe3eb;
   --pico-form-element-border-color: #cfd5e2;
@@ -3238,11 +3238,7 @@ textarea,
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-card-sectioning-background-color: rgb(251, 251.5, 252.25);
-  --pico-dropdown-background-color: #fff;
-  --pico-dropdown-border-color: #eff1f4;
-  --pico-dropdown-hover-background-color: #eff1f4;
   --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
-  --pico-progress-background-color: #dfe3eb;
 }
 
 .text-center {
@@ -3253,8 +3249,28 @@ textarea,
   justify-content: center;
 }
 
+.main-container {
+  padding: 50px 0;
+}
+
+.site-footer {
+  background: #502700;
+  color: #FFFAF0;
+  padding: 20px 0;
+}
+
+.site-header {
+  padding: 10px 0;
+  border-bottom: 1px solid #FEC9A7;
+  background: #FFEBC9;
+}
+.site-header .custom-logo-link {
+  max-width: 320px;
+}
 .site-header .site-title {
   margin-bottom: 0;
+  align-items: center;
+  display: flex;
 }
 .site-header .nav-container {
   display: flex;
@@ -3276,7 +3292,7 @@ textarea,
   min-height: 100dvh;
 }
 
-.home-page-container .site-main {
+.home-page-container .main-container {
   display: grid;
   min-height: 0;
 }
@@ -3313,6 +3329,8 @@ textarea,
 .amvs-portfolio-container article.grid-item {
   width: 100%;
   height: 320px;
+  background: transparent;
+  box-shadow: none;
 }
 @media (min-width: 768px) {
   .amvs-portfolio-container article.grid-item {
@@ -3325,7 +3343,8 @@ textarea,
   }
 }
 .amvs-portfolio-container article a {
-  background: black;
+  background: #FFEBC9;
+  color: #502700;
   width: 100%;
   display: block;
   height: 100%;
@@ -3338,6 +3357,9 @@ textarea,
   padding: 30px;
   text-align: center;
   text-decoration: none;
+}
+.amvs-portfolio-container article a:active, .amvs-portfolio-container article a:focus, .amvs-portfolio-container article a:hover {
+  background: #FEC9A7;
 }
 
 .polaroid-container {

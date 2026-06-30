@@ -1,0 +1,7 @@
+@use "../utilities/variables";
+
+.site-footer {
+	background: variables.$text-color;
+	color: variables.$background-color;
+	padding: 20px 0;
+}

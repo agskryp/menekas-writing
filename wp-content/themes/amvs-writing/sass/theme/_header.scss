@@ -1,6 +1,18 @@
+@use "../utilities/variables";
+
 .site-header {
+	padding: 10px 0;
+	border-bottom: 1px solid variables.$secondary-hover;
+	background: variables.$secondary;
+
+	.custom-logo-link {
+		max-width: 320px;
+	}
+	
 	.site-title {
 		margin-bottom: 0;
+		align-items: center;
+    display: flex;
 	}
 
 	.nav-container {

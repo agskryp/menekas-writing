@@ -6,7 +6,7 @@
 	get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="main-container">
 	<div class="container" style="text-align: justify; max-width: 768px;">
 		<?php
 			while ( have_posts() ) {

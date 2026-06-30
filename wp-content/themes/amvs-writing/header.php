@@ -1,5 +1,6 @@
 <?
 	$home_class = is_page_template( 'template-home.php' ) ? ' home-page-container' : '';
+	$title_element = is_front_page() ? 'h1' : 'p';
 ?>
 
 <!doctype html>
@@ -25,33 +26,17 @@
 
 		<header id="masthead" class="site-header">
 			<nav class="container">
-				<ul>
-					<li>
-						<?php
-							the_custom_logo();
+				<?php
+					the_custom_logo();
 						
-							if ( is_front_page() ) {
-						?>
-							<h1 class="site-title">
-								<a 
-									href="<?php echo esc_url( home_url( '/' ) ); ?>" 
-									rel="home"
-								><?php bloginfo( 'name' ); ?></a>
-							</h1>
-						<?php
-							} 
-							
-							else {
-						?>
-							<p class="site-title">
-								<a 
-									href="<?php echo esc_url( home_url( '/' ) ); ?>" 
-									rel="home"
-								><?php bloginfo( 'name' ); ?></a>
-							</p>
-						<?php } ?>
-					</li>
-				</ul>
+					echo '<' . $title_element . ' class="site-title">';
+				?> 
+					<a 
+						class="screen-reader-text"
+						href="<?php echo esc_url( home_url( '/' ) ); ?>" 
+						rel="home"
+					><?php bloginfo( 'name' ); ?></a>
+				<?php echo '</' . $title_element . '>'; ?>
 				
 				<div class="nav-container">
 					<?php

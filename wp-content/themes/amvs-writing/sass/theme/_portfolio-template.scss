@@ -1,3 +1,5 @@
+@use "../utilities/variables";
+
 .amvs-portfolio-container {
 	.portfolio-list-grid {
 		display: grid;
@@ -18,6 +20,8 @@
 		&.grid-item {
 			width: 100%;
 			height: 320px;
+			background: transparent;
+			box-shadow: none;
 
 			@media (min-width: 768px) {
 				width: calc(100% / 2);
@@ -29,7 +33,8 @@
 		}
 
 		a {
-			background: black;
+			background: variables.$secondary;
+			color: variables.$text-color;
 			width: 100%;
 			display: block;
 			height: 100%;
@@ -42,6 +47,12 @@
 			padding: 30px;
     	text-align: center;
 			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background: variables.$secondary-hover;
+			}
 		}
 	}
 }
