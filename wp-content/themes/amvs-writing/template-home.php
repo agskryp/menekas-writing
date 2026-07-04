@@ -19,6 +19,7 @@
 			<?php post_class( 'home-template-hero container-fluid grid' ); ?>
 		>
 			<div class="entry-content">
+				<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
 				<?php the_content(); ?>
 			</div>
 		</div>

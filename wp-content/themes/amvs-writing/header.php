@@ -26,17 +26,7 @@
 
 		<header id="masthead" class="site-header">
 			<nav class="container">
-				<?php
-					the_custom_logo();
-						
-					echo '<' . $title_element . ' class="site-title">';
-				?> 
-					<a 
-						class="screen-reader-text"
-						href="<?php echo esc_url( home_url( '/' ) ); ?>" 
-						rel="home"
-					><?php bloginfo( 'name' ); ?></a>
-				<?php echo '</' . $title_element . '>'; ?>
+				<?php the_custom_logo(); ?>
 				
 				<div class="nav-container">
 					<?php

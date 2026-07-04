@@ -3193,27 +3193,27 @@ textarea,
   --pico-text-selection-color: rgba(#502700, 0.25);
   --pico-muted-color: #FFEBC9;
   --pico-muted-border-color: rgb(255, 239, 211.8);
-  --pico-primary: #B28D15;
-  --pico-primary-background: #B28D15;
-  --pico-primary-underline: rgba(#B28D15, 0.5);
-  --pico-primary-hover: #906B03;
-  --pico-primary-hover-background: rgb(115.2, 85.6, 2.4);
-  --pico-primary-focus: rgba(#906B03, 0.5);
-  --pico-primary-inverse: #fff;
+  --pico-primary: #8D7111;
+  --pico-primary-background: #8D7111;
+  --pico-primary-underline: rgba(#8D7111, 0.5);
+  --pico-primary-hover: #6B5000;
+  --pico-primary-hover-background: rgb(85.6, 64, 0);
+  --pico-primary-focus: rgba(#6B5000, 0.5);
+  --pico-primary-inverse: $white;
   --pico-secondary: #FFEBC9;
   --pico-secondary-background: #FFEBC9;
   --pico-secondary-underline: rgba(#FFEBC9, 0.5);
   --pico-secondary-hover: #FEC9A7;
   --pico-secondary-hover-background: rgb(253.0539325843, 149.9123595506, 83.7460674157);
   --pico-secondary-focus: rgba(#FEC9A7, 0.5);
-  --pico-secondary-inverse: #fff;
+  --pico-secondary-inverse: $white;
   --pico-contrast: #181c25;
   --pico-contrast-background: #181c25;
   --pico-contrast-underline: rgba(24, 28, 37, 0.5);
   --pico-contrast-hover: #000;
   --pico-contrast-hover-background: #000;
   --pico-contrast-focus: rgba(93, 107, 137, 0.25);
-  --pico-contrast-inverse: #fff;
+  --pico-contrast-inverse: $white;
   --pico-h1-color: #502700;
   --pico-h2-color: #502700;
   --pico-h3-color: #502700;
@@ -3222,8 +3222,6 @@ textarea,
   --pico-h6-color: #502700;
   --pico-mark-background-color: rgb(252.5, 230.5, 191.5);
   --pico-mark-color: #0f1114;
-  --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: rgb(243, 244.5, 246.75);
   --pico-code-color: #FFEBC9;
@@ -3231,16 +3229,13 @@ textarea,
   --pico-form-element-selected-background-color: #dfe3eb;
   --pico-form-element-border-color: #cfd5e2;
   --pico-form-element-color: #23262c;
-  --pico-form-element-active-background-color: #fff;
+  --pico-form-element-active-background-color: $white;
   --pico-switch-background-color: #bfc7d9;
-  --pico-switch-color: #fff;
+  --pico-switch-color: $white;
   --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
-  --pico-card-background-color: var(--pico-background-color);
-  --pico-card-border-color: var(--pico-muted-border-color);
-  --pico-card-box-shadow: var(--pico-box-shadow);
   --pico-card-sectioning-background-color: #FFFAF0;
 }
 
@@ -3292,11 +3287,11 @@ p {
 }
 .site-header .nav-container button {
   margin: 0 0 0 20px;
-  background-color: #B28D15;
+  background-color: #8D7111;
   font-weight: 500;
 }
 .site-header .nav-container button:active, .site-header .nav-container button:focus, .site-header .nav-container button:hover {
-  background-color: #906B03;
+  background-color: #6B5000;
 }
 
 .home-page-container {
@@ -3326,7 +3321,7 @@ p {
 }
 
 .amvs-portfolio-container .portfolio-list-filter a {
-  background-color: #B28D15;
+  background-color: #8D7111;
   font-weight: 500;
   color: #FFFAF0;
   margin: 0;
@@ -3335,7 +3330,7 @@ p {
   text-align: center;
 }
 .amvs-portfolio-container .portfolio-list-filter a:active, .amvs-portfolio-container .portfolio-list-filter a:focus, .amvs-portfolio-container .portfolio-list-filter a:hover {
-  background-color: #906B03;
+  background-color: #6B5000;
   text-decoration: none;
 }
 .amvs-portfolio-container .portfolio-list-grid {

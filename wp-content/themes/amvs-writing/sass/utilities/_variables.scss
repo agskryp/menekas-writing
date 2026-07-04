@@ -1,10 +1,11 @@
 @use "sass:color";
 
 // amvs-writing theme colors
+$white: #FFFFFF;
 $background-color: #FFFAF0;
 $text-color: #502700;
-$primary: #B28D15;
-$primary-hover: #906B03;
+$primary: #8D7111;
+$primary-hover: #6B5000;
 $secondary: #FFEBC9;
 $secondary-hover: #FEC9A7;
 
@@ -24,21 +25,21 @@ $secondary-hover: #FEC9A7;
   --pico-primary-hover: #{$primary-hover};
   --pico-primary-hover-background: #{color.scale($primary-hover, $lightness: -20%)};
   --pico-primary-focus: rgba(#{$primary-hover}, 0.5);
-  --pico-primary-inverse: #fff;
+  --pico-primary-inverse: $white;
   --pico-secondary: #{$secondary};
   --pico-secondary-background: #{$secondary};
   --pico-secondary-underline: rgba(#{$secondary}, 0.5);
   --pico-secondary-hover: #{$secondary-hover};
   --pico-secondary-hover-background: #{color.scale($secondary-hover, $lightness: -20%)};
   --pico-secondary-focus: rgba(#{$secondary-hover}, 0.5);
-  --pico-secondary-inverse: #fff;
+  --pico-secondary-inverse: $white;
   --pico-contrast: #181c25;
   --pico-contrast-background: #181c25;
   --pico-contrast-underline: rgba(24, 28, 37, 0.5);
   --pico-contrast-hover: #000;
   --pico-contrast-hover-background: #000;
   --pico-contrast-focus: rgba(93, 107, 137, 0.25);
-  --pico-contrast-inverse: #fff;
+  --pico-contrast-inverse: $white;
   --pico-h1-color: #{$text-color};
   --pico-h2-color: #{$text-color};
   --pico-h3-color: #{$text-color};
@@ -47,8 +48,6 @@ $secondary-hover: #FEC9A7;
   --pico-h6-color: #{$text-color};
   --pico-mark-background-color: rgb(252.5, 230.5, 191.5);
   --pico-mark-color: #0f1114;
-  --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: rgb(243, 244.5, 246.75);
   --pico-code-color: #{$secondary};
@@ -56,16 +55,13 @@ $secondary-hover: #FEC9A7;
   --pico-form-element-selected-background-color: #dfe3eb;
   --pico-form-element-border-color: #cfd5e2;
   --pico-form-element-color: #23262c;
-  --pico-form-element-active-background-color: #fff;
+  --pico-form-element-active-background-color: $white;
   --pico-switch-background-color: #bfc7d9;
-  --pico-switch-color: #fff;
+  --pico-switch-color: $white;
   --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
-	--pico-card-background-color: var(--pico-background-color);
-  --pico-card-border-color: var(--pico-muted-border-color);
-  --pico-card-box-shadow: var(--pico-box-shadow);
   --pico-card-sectioning-background-color: #{$background-color};
   
 }
