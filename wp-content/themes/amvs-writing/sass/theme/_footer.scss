@@ -4,4 +4,28 @@
 	background: variables.$text-color;
 	color: variables.$background-color;
 	padding: 20px 0;
+
+	a {
+		color: variables.$secondary;
+	}
+
+	.footer-nav {
+		justify-content: center;
+
+		a {
+			text-decoration: underline;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.copyright-info {
+		display: flex; 
+		justify-content: space-between;
+		padding: var(--pico-nav-element-spacing-vertical) var(--pico-nav-element-spacing-horizontal);
+	}
 }

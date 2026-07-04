@@ -2,19 +2,54 @@
 
 .amvs-portfolio-container {
 	.portfolio-list-filter {
+		margin: 40px 20px 20px;
+
+		nav {
+			background: variables.$secondary;
+			border-radius: 20px;
+			max-width: 470px;
+			padding: 20px;
+			@media (min-width: 768px) {
+				max-width: 660px;
+			}
+
+			@media (min-width: 1024px) {
+				max-width: 910px;
+			}
+
+			@media (min-width: 1280px) {
+				max-width: 1160px;
+			}
+
+			ul {
+				display: block;
+				text-align: center;
+
+				li {
+					padding: 10px;
+
+					&:first-of-type {
+						display: block;
+						@media (min-width: 768px) {
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+
 		a {
-			background-color: variables.$primary;
 			font-weight: 500;
-			color: variables.$background-color;
+			color: variables.$text-color;
 			margin: 0;
 			font-size: 16px;
-			min-width: 130px;
     	text-align: center;
+			text-decoration: underline;
+			padding: 0;
 
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: variables.$primary-hover;
 				text-decoration: none;
 			}
 		}
@@ -26,7 +61,7 @@
 		grid-template-columns: 1fr;
 		width: 100%;
 
-		@media (min-width: 769px) {
+		@media (min-width: 768px) {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 	}
@@ -41,7 +76,6 @@
 			height: 320px;
 			background: transparent;
 			box-shadow: none;
-
 			@media (min-width: 768px) {
 				width: calc(100% / 2);
 			}

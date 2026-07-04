@@ -45,35 +45,40 @@
 			}
 		?>
 
-		<nav
-			class="container container-center portfolio-list-filter"
-			aria-label="<?php esc_attr_e( 'Portfolio Categories', 'amvs-writing' ); ?>"
-		>
-			<ul>
-				<li>
-					<a href="<?php echo esc_url( home_url( '/portfolio/' ) ); ?>" data-filter="*">
-						<?php esc_html_e( 'All', 'amvs-writing' ); ?>
-					</a>
-				</li>
-							
-				<?php 
-					if( !empty( $portfolio_categories ) && !is_wp_error( $portfolio_categories ) ) { 
-						foreach( $portfolio_categories as $portfolio_category ) { 
-				?>
+		<div class="portfolio-list-filter">
+			<nav
+				class="container container-center"
+				aria-label="<?php esc_attr_e( 'Portfolio Categories', 'amvs-writing' ); ?>"
+			>
+				<ul>
 					<li>
-						<a
-							href="<?= esc_url( home_url( '/portfolio/' . $portfolio_category -> slug . '/' ) ); ?>"
-							data-filter=".portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category -> slug ) ); ?>"
-						>
-							<?php echo esc_html( $portfolio_category->name ); ?>
+						<span><?php esc_html_e( 'Filter by:', 'amvs-writing' ); ?></span>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( home_url( '/portfolio/' ) ); ?>" data-filter="*">
+							<?php esc_html_e( 'All', 'amvs-writing' ); ?>
 						</a>
 					</li>
-				<?php 
-						} 
-					}
-				?>
-			</ul>
-		</nav>
+								
+					<?php 
+						if( !empty( $portfolio_categories ) && !is_wp_error( $portfolio_categories ) ) { 
+							foreach( $portfolio_categories as $portfolio_category ) { 
+					?>
+						<li>
+							<a
+								href="<?= esc_url( home_url( '/portfolio/' . $portfolio_category -> slug . '/' ) ); ?>"
+								data-filter=".portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category -> slug ) ); ?>"
+							>
+								<?php echo esc_html( $portfolio_category->name ); ?>
+							</a>
+						</li>
+					<?php 
+							} 
+						}
+					?>
+				</ul>
+			</nav>
+		</div>
 
 			<div class="container portfolio-list-grid">
 				<?php 

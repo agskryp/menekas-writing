@@ -1,13 +1,13 @@
 <footer class="site-footer">
-	<nav class="container" style="justify-content: center;">
+	<nav class="footer-nav container">
 		<ul>
 			<li><a href="#">View Resume</a></li>
 			<li><a href="#">Contact Me</a></li>
 		</ul>
 	</nav>
 
-	<div class="site-info container" style="display: flex; justify-content: space-between;">
-		<small>Menaka's Writing &copy; <?php echo get_the_date( 'Y' ); ?> Menaka Skrypnyk. <br /> All rights reserved.</small>
+	<div class="copyright-info container" style="">
+		<small>Menaka's Writing &copy; <?php echo get_the_date( 'Y' ); ?> Menaka Skrypnyk.  All rights reserved.</small>
 
 		<small>Site by <a href="https://www.agskryp.com" target="_blank" rel="noopener">A.G. Skryp</a></small>
 	</div>
