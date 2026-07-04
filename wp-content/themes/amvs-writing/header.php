@@ -24,11 +24,35 @@
 			href="#primary"
 		><?php esc_html_e( 'Skip to content', 'amvs-writing' ); ?></a>
 
-		<header id="masthead" class="site-header">
+			<header id="masthead" class="site-header">
 			<nav class="container">
 				<?php the_custom_logo(); ?>
+
+				<button
+					class="mobile-menu-toggle"
+					type="button"
+					aria-controls="primary-navigation"
+					aria-expanded="false"
+					data-mobile-menu-open
+				>
+					<span class="screen-reader-text"><?php esc_html_e( 'Open menu', 'amvs-writing' ); ?></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</button>
 				
-				<div class="nav-container">
+				<div class="nav-container" id="primary-navigation">
+					<button
+						class="mobile-menu-close"
+						type="button"
+						aria-controls="primary-navigation"
+						data-mobile-menu-close
+					>
+						<span class="screen-reader-text"><?php esc_html_e( 'Close menu', 'amvs-writing' ); ?></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+
 					<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
@@ -42,6 +66,7 @@
 						type="button"
 						data-open-modal="contact-modal"
 						aria-haspopup="dialog"
+						class="cta-button"
 					>
 						<?php esc_html_e( 'Contact', 'amvs-writing' ); ?>
 					</button>

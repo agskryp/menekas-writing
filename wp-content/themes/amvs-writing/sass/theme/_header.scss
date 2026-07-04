@@ -5,6 +5,12 @@
 	border-bottom: 1px solid variables.$secondary-hover;
 	background: variables.$secondary;
 
+	nav.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	.custom-logo-link {
 		max-width: 320px;
 	}
@@ -28,7 +34,7 @@
 			}
 		}
 
-		button {
+		button.cta-button {
 			margin: 0 0 0 20px;
 			background-color: variables.$primary;
 			font-weight: 500;
@@ -41,4 +47,123 @@
 			}
 		}
 	}	
+
+	.mobile-menu-toggle,
+	.mobile-menu-close {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.site-header {
+		position: relative;
+		z-index: 20;
+
+		.custom-logo-link {
+			max-width: 240px;
+		}
+
+		.mobile-menu-toggle,
+		.mobile-menu-close {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 44px;
+			height: 44px;
+			padding: 0;
+			margin: 0;
+			border: 0;
+			background: transparent;
+			color: variables.$text-color;
+		}
+
+		.mobile-menu-toggle {
+			flex-direction: column;
+			gap: 5px;
+
+			span[aria-hidden="true"] {
+				display: block;
+				width: 24px;
+				height: 2px;
+				background: currentColor;
+			}
+		}
+
+		.mobile-menu-close {
+			position: absolute;
+			top: 18px;
+			right: 18px;
+			margin: 0;
+			background: transparent;
+			color: variables.$text-color;
+
+			&:active,
+			&:focus,
+			&:hover {
+				// background: transparent;
+				color: variables.$primary;
+			}
+
+			span[aria-hidden="true"] {
+				position: absolute;
+				width: 24px;
+				height: 2px;
+				background: currentColor;
+				transform: rotate(45deg);
+
+				&:last-of-type {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		.nav-container {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1000;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			width: min(320px, 86vw);
+			padding: 72px 24px 24px;
+			overflow-y: auto;
+			background: variables.$secondary;
+			border-left: 1px solid variables.$secondary-hover;
+			box-shadow: -12px 0 32px rgba(80, 39, 0, 0.18);
+			transform: translateX(100%);
+			visibility: hidden;
+			transition: transform 220ms ease, visibility 220ms ease;
+
+			.main-menu {
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				width: 100%;
+				margin: 0;
+
+				li {
+					width: 100%;
+					text-align: center;
+				}
+
+				a {
+					display: inline-block;
+					padding: 0;
+					margin: 0;
+				}
+			}
+
+			button:not(.mobile-menu-close) {
+				width: 100%;
+				margin: 20px 0 0;
+			}
+		}
+
+		.nav-container.is-open {
+			transform: translateX(0);
+			visibility: visible;
+		}
+	}
 }

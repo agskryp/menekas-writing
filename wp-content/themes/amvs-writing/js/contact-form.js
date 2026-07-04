@@ -1,4 +1,58 @@
 ( function() {
+	const menu = document.getElementById( 'primary-navigation' );
+	const openButton = document.querySelector( '[data-mobile-menu-open]' );
+	const closeButton = document.querySelector( '[data-mobile-menu-close]' );
+	const desktopQuery = window.matchMedia( '(min-width: 768px)' );
+
+	if ( ! menu || ! openButton || ! closeButton ) {
+		return;
+	}
+
+	function openMenu() {
+		menu.classList.add( 'is-open' );
+		openButton.setAttribute( 'aria-expanded', 'true' );
+		closeButton.focus();
+	}
+
+	function closeMenu() {
+		menu.classList.remove( 'is-open' );
+		openButton.setAttribute( 'aria-expanded', 'false' );
+	}
+
+	openButton.addEventListener( 'click', openMenu );
+	closeButton.addEventListener( 'click', function() {
+		closeMenu();
+		openButton.focus();
+	} );
+
+	menu.querySelectorAll( 'a, [data-open-modal]' ).forEach( function( item ) {
+		item.addEventListener( 'click', function() {
+			if ( ! desktopQuery.matches ) {
+				closeMenu();
+			}
+		} );
+	} );
+
+	document.addEventListener( 'keyup', function( event ) {
+		if ( event.key === 'Escape' ) {
+			closeMenu();
+		}
+	} );
+
+	function handleDesktopChange( event ) {
+		if ( event.matches ) {
+			closeMenu();
+		}
+	}
+
+	if ( desktopQuery.addEventListener ) {
+		desktopQuery.addEventListener( 'change', handleDesktopChange );
+	} else {
+		desktopQuery.addListener( handleDesktopChange );
+	}
+}() );
+
+( function() {
 	const modal = document.getElementById( 'contact-modal' );
 
 	if ( ! modal ) {
