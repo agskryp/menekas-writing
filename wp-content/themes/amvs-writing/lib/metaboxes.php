@@ -6,7 +6,7 @@
 function amvs_writing_register_about_template_metabox() {
 	$about_template_metabox = new_cmb2_box( array(
 		'id'           => 'amvs_about_template_metabox',
-		'title'        => esc_html__( 'Photo Items', 'amvs-writing' ),
+		'title'        => esc_html__( 'Photos', 'amvs-writing' ),
 		'object_types' => array( 'page' ),
 		'context'      => 'normal',
 		'priority'     => 'default',
@@ -19,7 +19,10 @@ function amvs_writing_register_about_template_metabox() {
 	$photo_group_id = $about_template_metabox->add_field( array(
 		'id'          => 'amvs_portfolio_template_items',
 		'type'        => 'group',
-		'description' => esc_html__( 'Add personalized photos to your page.', 'amvs-writing' ),
+		'description' => 
+			esc_html__( 
+				'Add personalized photos to your page.  Recommend a minimum of 3 photos.', 'amvs-writing' 
+			),
 		'options'     => array(
 			'group_title'   => esc_html__( 'Photo {#}', 'amvs-writing' ),
 			'add_button'    => esc_html__( 'Add Photo', 'amvs-writing' ),

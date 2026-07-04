@@ -3320,6 +3320,14 @@ p {
   margin: 0;
 }
 
+.notes-on-article {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+}
+
 .amvs-portfolio-container .portfolio-list-filter a {
   background-color: #8D7111;
   font-weight: 500;

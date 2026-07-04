@@ -50,10 +50,6 @@ add_action( 'init', 'amvs_writing_register_portfolio_post_type' );
 
 
 function amvs_writing_register_portfolio_metabox() {
-	if ( ! function_exists( 'new_cmb2_box' ) ) {
-		return;
-	}
-
 	$portfolio_metabox = new_cmb2_box( array(
 		'id'           => 'amvs_writing_metabox',
 		'title'        => esc_html__( 'Item Details', 'amvs-writing' ),
@@ -79,6 +75,16 @@ function amvs_writing_register_portfolio_metabox() {
 			'yes' => __( 'Yes', 'cmb2' ),
 			'no'  => __( 'No', 'cmb2' ),
 		),
+	) );
+
+	$portfolio_metabox -> add_field( array(
+		'id'          => 'amvs_portfolio_notes_on_article_content',
+		'type'        => 'textarea_small',
+		'name'         => esc_html__( 'Notes on the article', 'amvs-writing' ),
+		'description' => 
+			esc_html__( 
+				'Add additional information on the article (date of pubication, client who it was for, platform it was posted to, etc.).  This will display at the end of posts on your site.', 'amvs-writing' 
+			),
 	) );
 }
 add_action( 'cmb2_admin_init', 'amvs_writing_register_portfolio_metabox' );

@@ -3,6 +3,8 @@
 	 * The template for displaying all portfolio posts
 	 */
 
+	$notes_on_article = get_post_meta( get_the_ID(), 'amvs_portfolio_notes_on_article_content', true );
+
 	get_header();
 ?>
 
@@ -15,6 +17,10 @@
 				echo '<h1 class="text-center">' . get_the_title() . '</h1>';
 
 				the_content();
+
+				if( !empty( $notes_on_article ) ) {
+					echo '<p class="notes-on-article">' . $notes_on_article . '</p>';
+				}
 			}
 		?>
 	</div>
