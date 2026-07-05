@@ -1,8 +1,21 @@
+<?php
+	$resume_pdf = wp_get_attachment_url( absint( amvs_writings_site_options( 'resume_pdf_id' ) ) );
+?>
+
 <footer class="site-footer">
 	<nav class="footer-nav container">
 		<ul>
-			<li><a href="#">View Resume</a></li>
-			<li><a href="#">Contact Me</a></li>
+			<?php if ( $resume_pdf ) { ?>
+				<li>
+					<a href="<?php echo esc_url( $resume_pdf ); ?>" target="_blank" rel="noopener" download>
+						<?php esc_html_e( 'View Resume', 'amvs-writing' ); ?>
+					</a>
+				</li>
+			<?php } ?>
+			
+			<li>
+				<a href="#" data-open-modal="contact-modal" aria-haspopup="dialog">Contact Me</a>
+			</li>
 		</ul>
 	</nav>
 

@@ -1,14 +1,19 @@
 <?php
-$contact_form_recaptcha = function_exists( 'amvs_writing_contact_recaptcha_enabled' ) && amvs_writing_contact_recaptcha_enabled();
-$contact_form_site_key  = function_exists( 'amvs_writing_contact_recaptcha_site_key' ) ? amvs_writing_contact_recaptcha_site_key() : '';
-?>
+	$contact_form_recaptcha = 
+		function_exists( 'amvs_writing_contact_recaptcha_enabled' ) && amvs_writing_contact_recaptcha_enabled();
+	
+	$contact_form_site_key = 
+		function_exists( 'amvs_writing_contact_recaptcha_site_key' ) 
+			? amvs_writing_contact_recaptcha_site_key() 
+			: '';
 
-<?php if ( $contact_form_recaptcha ) { ?>
+	if ( $contact_form_recaptcha ) { 
+?>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <?php } ?>
 
 <dialog id="contact-modal">
-	<article>
+	<article class="contact-form-container">
 		<header>
 			<button
 				type="button"
@@ -16,11 +21,13 @@ $contact_form_site_key  = function_exists( 'amvs_writing_contact_recaptcha_site_
 				rel="prev"
 				data-close-modal
 			></button>
+		
 			<h2><?php esc_html_e( 'Let\'s Connect!', 'amvs-writing' ); ?></h2>
-		</header>
+	</header>
 
 		<form id="contact-form" method="post" data-contact-form>
 			<?php wp_nonce_field( 'amvs_contact_form', 'amvs_contact_nonce' ); ?>
+			
 			<input type="hidden" name="action" value="amvs_contact_form">
 
 			<div class="grid">

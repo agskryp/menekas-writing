@@ -80,68 +80,72 @@
 			</nav>
 		</div>
 
-			<div class="container portfolio-list-grid">
+			<div class="container" style="padding: 0; margin: 0 auto;">
+				<div class="portfolio-list-grid">
+					<?php 
+						if( $portfolio_posts -> have_posts() ) {
+							while( $portfolio_posts -> have_posts() ) { 
+								$portfolio_posts -> the_post();
+
+								$post_id = get_the_ID();
+									
+								$portfolio_item_categories = get_the_terms( $post_id, 'category' );
+								$portfolio_item_names 		 = array();
+								$portfolio_item_classes 	 = array( 'grid-item' );
+								$published_url 				 		 = get_post_meta( $post_id, 'amvs_published_url', true );
+								$portfolio_item_url 		 	 = get_permalink();
+								$portfolio_item_target 	 	 = '';
+								$portfolio_item_rel 		 	 = '';
+								$portfolio_item_icon 		 	 = '';
+
+								if( !empty( $published_url ) ) {
+									$portfolio_item_url 	 = $published_url;
+									$portfolio_item_target = '_blank';
+									$portfolio_item_rel 	 = 'noopener';
+									$portfolio_item_icon 	 =  
+										' <img src="' . get_template_directory_uri() . '/img/up-right-from-square-solid-full.svg" width="18" height="18" alt="" />';
+								}
+
+								if( !empty( $portfolio_item_categories ) && !is_wp_error( $portfolio_item_categories ) ) {
+									foreach ( $portfolio_item_categories as $portfolio_item_category ) {
+										$portfolio_item_classes[] = 'portfolio-category-' . sanitize_html_class( 
+											$portfolio_item_category -> slug 
+										);
+
+										$portfolio_item_names[] = esc_html( $portfolio_item_category -> name );
+									}
+								}
+				?>
+					<article class="<?php echo esc_attr( implode( ' ', $portfolio_item_classes ) ); ?>">
+						<a
+							href="<?php echo esc_url( $portfolio_item_url ); ?>"
+							<?php 
+								echo !empty( $portfolio_item_target ) 
+									? 'target="' . esc_attr( $portfolio_item_target ) . '"' 
+									: ''; 
+									
+								echo !empty( $portfolio_item_rel ) 
+									? 'rel="' . esc_attr( $portfolio_item_rel ) . '"' 
+									: ''; ?>
+						>
+							<header><?php echo get_the_title() . $portfolio_item_icon; ?></header>
+							
+							<?php 
+								if( has_post_thumbnail() ) {
+									the_post_thumbnail( array( 280, 50 ) );
+								}
+							?>
+							
+							<small><?php echo esc_html( implode( ' | ', $portfolio_item_names ) ); ?></small>
+						</a>
+					</article>
 				<?php 
-					if( $portfolio_posts -> have_posts() ) {
-					while( $portfolio_posts -> have_posts() ) { 
-						$portfolio_posts -> the_post();
-
-						$post_id = get_the_ID();
-							
-						$portfolio_item_categories = get_the_terms( $post_id, 'category' );
-						$portfolio_item_names 		 = array();
-						$portfolio_item_classes 	 = array( 'grid-item' );
-						$published_url 				 		 = get_post_meta( $post_id, 'amvs_published_url', true );
-						$live_page 						 		 = get_post_meta( $post_id, 'amvs_live_page', true );
-						$portfolio_item_url 		 	 = get_permalink();
-						$portfolio_item_target 	 	 = '';
-						$portfolio_item_rel 		 	 = '';
-
-						if( !empty( $published_url ) && 'yes' === $live_page ) {
-							$portfolio_item_url 	 = $published_url;
-							$portfolio_item_target = '_blank';
-							$portfolio_item_rel 	 = 'noopener';
 						}
-
-						if( !empty( $portfolio_item_categories ) && !is_wp_error( $portfolio_item_categories ) ) {
-							foreach ( $portfolio_item_categories as $portfolio_item_category ) {
-								$portfolio_item_classes[] = 'portfolio-category-' . sanitize_html_class( 
-									$portfolio_item_category -> slug 
-								);
-
-								$portfolio_item_names[] = esc_html( $portfolio_item_category -> name );
-							}
-						}
-			?>
-				<article class="<?php echo esc_attr( implode( ' ', $portfolio_item_classes ) ); ?>">
-					<a
-						href="<?php echo esc_url( $portfolio_item_url ); ?>"
-						<?php 
-							echo !empty( $portfolio_item_target ) 
-								? 'target="' . esc_attr( $portfolio_item_target ) . '"' 
-								: ''; 
 								
-							echo !empty( $portfolio_item_rel ) 
-								? 'rel="' . esc_attr( $portfolio_item_rel ) . '"' 
-								: ''; ?>
-					>
-						<header><?php the_title(); ?></header>
-						
-						<?php 
-							if( has_post_thumbnail() ) {
-								the_post_thumbnail( array( 280, 50 ) );
-							}
-						?>
-						
-						<small><?php echo esc_html( implode( ' | ', $portfolio_item_names ) ); ?></small>
-					</a>
-				</article>
-			<?php 
+						wp_reset_postdata(); 
 					}
-							
-					wp_reset_postdata(); 
-				}
-			?>
+				?>
+			</div>
 		</div>
 	</div>
 </main>

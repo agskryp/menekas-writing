@@ -8,8 +8,8 @@
 	get_header();
 ?>
 
-<main id="primary" class="main-container">
-	<div class="container" style="text-align: justify; max-width: 768px;">
+<main id="primary" class="main-container portfolio-post-container">
+	<div class="container">
 		<?php
 			while ( have_posts() ) {
 				the_post();
@@ -19,7 +19,7 @@
 				the_content();
 
 				if( !empty( $notes_on_article ) ) {
-					echo '<p class="notes-on-article">' . $notes_on_article . '</p>';
+					echo '<div class="notes-on-article">' . wp_kses_post( wpautop( $notes_on_article ) ) . '</div>';
 				}
 			}
 		?>

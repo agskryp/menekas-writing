@@ -22,5 +22,12 @@
 
 	.entry-content {
 		margin: 0;
+		
+		h2 {
+			font-size: 48px;
+			@media (min-width: 768px) {
+				font-size: 72px;
+			}
+		}
 	}
 }

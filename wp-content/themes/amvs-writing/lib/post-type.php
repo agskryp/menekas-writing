@@ -60,31 +60,31 @@ function amvs_writing_register_portfolio_metabox() {
 
 	$portfolio_metabox -> add_field( array(
 		'name' => esc_html__( 'Published URL', 'amvs-writing' ),
-		'desc' => 'Enter the URL this writing is published.',
+		'desc' => 
+			'Enter the URL this writing is published on to have this item go directly to the source.  <br />Leave this field blank and put the URL in the \'Notes on the article\' field to reference the source, but publish the content of this item.',
 		'id'   => 'amvs_published_url',
 		'type' => 'text_url',
 	) );
 
 	$portfolio_metabox -> add_field( array(
-		'name'             => esc_html__( 'Is this writing still live?' ),
-		'desc'             => 'Select No if the URL page no longer exists.',
-		'id'               => 'amvs_live_page',
-		'type'             => 'select',
-		'default'          => 'yes',
-		'options'          => array(
-			'yes' => __( 'Yes', 'cmb2' ),
-			'no'  => __( 'No', 'cmb2' ),
-		),
-	) );
-
-	$portfolio_metabox -> add_field( array(
 		'id'          => 'amvs_portfolio_notes_on_article_content',
-		'type'        => 'textarea_small',
+		'type'        => 'wysiwyg',
 		'name'         => esc_html__( 'Notes on the article', 'amvs-writing' ),
 		'description' => 
 			esc_html__( 
 				'Add additional information on the article (date of pubication, client who it was for, platform it was posted to, etc.).  This will display at the end of posts on your site.', 'amvs-writing' 
 			),
+		'options'     => array(
+			'media_buttons' => false,
+			'quicktags'     => false,
+			'textarea_rows' => 5,
+			'tinymce'       => array(
+				'block_formats' => 'Paragraph=p',
+				'toolbar1'      => 'formatselect,bold,italic,link,unlink',
+				'toolbar2'      => '',
+				'toolbar3'      => '',
+			),
+		),
 	) );
 }
 add_action( 'cmb2_admin_init', 'amvs_writing_register_portfolio_metabox' );

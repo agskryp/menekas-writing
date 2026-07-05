@@ -68,3 +68,4 @@ include_once get_template_directory() . '/lib/metaboxes.php';
 include_once get_template_directory() . '/lib/post-type.php';
 include_once get_template_directory() . '/lib/scripts.php';
 include_once get_template_directory() . '/lib/shortcodes.php';
+include_once get_template_directory() . '/lib/site-options.php';

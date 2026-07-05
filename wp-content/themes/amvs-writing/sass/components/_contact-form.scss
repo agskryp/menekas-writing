@@ -1,0 +1,34 @@
+@use "../utilities/variables";
+
+.contact-form-container {
+	background: variables.$secondary;
+
+	header {
+		background: variables.$secondary;
+		align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row-reverse;
+
+		button[rel=prev] {
+			background-size: 2rem;
+			background-image: url( variables.$img-dir + 'img/xmark-solid-full.svg' );
+
+			// &:active,
+			// &:focus,
+			// &:hover {
+			// 	opacity: .6;
+			// }
+		}
+
+		h2 {
+			padding-right: 40px;
+		}
+	}
+
+	footer {
+		button {
+			color: variables.$background-color;
+		}
+	}
+}

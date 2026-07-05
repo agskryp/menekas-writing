@@ -4,7 +4,7 @@
 	 */
 	
 	function amvs_writing_scripts() {
-		$theme_ver = wp_get_theme()->get( 'Version' );
+		$theme_ver = wp_get_theme() -> get( 'Version' );
 		
 		wp_enqueue_style( 'amvs-writing-style', get_stylesheet_uri(), array(), $theme_ver );
 

@@ -2,7 +2,7 @@
 
 .amvs-portfolio-container {
 	.portfolio-list-filter {
-		margin: 40px 20px 20px;
+		margin: 40px var(--pico-block-spacing-horizontal) 20px;
 
 		nav {
 			background: variables.$secondary;
@@ -73,11 +73,12 @@
 
 		&.grid-item {
 			width: 100%;
-			height: 320px;
+			height: 260px;
 			background: transparent;
 			box-shadow: none;
 			@media (min-width: 768px) {
 				width: calc(100% / 2);
+				height: 320px;
 			}
 
 			@media (min-width: 1024px) {

@@ -9,6 +9,8 @@ $primary-hover: #6B5000;
 $secondary: #FFEBC9;
 $secondary-hover: #FEC9A7;
 
+// img dir
+$img-dir: '../amvs-writing/';
 
 [data-theme=light],
 :root:not([data-theme=dark]),
@@ -51,11 +53,10 @@ $secondary-hover: #FEC9A7;
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: rgb(243, 244.5, 246.75);
   --pico-code-color: #{$secondary};
-  --pico-form-element-background-color: rgb(251, 251.5, 252.25);
-  --pico-form-element-selected-background-color: #dfe3eb;
-  --pico-form-element-border-color: #cfd5e2;
-  --pico-form-element-color: #23262c;
-  --pico-form-element-active-background-color: $white;
+  --pico-form-element-background-color: #{$background-color};
+  --pico-form-element-border-color: #{$secondary-hover};
+  --pico-form-element-color: #{$text-color};
+  --pico-form-element-active-background-color: #{color.scale($background-color, $lightness: +20%)};;
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-color: $white;
   --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);

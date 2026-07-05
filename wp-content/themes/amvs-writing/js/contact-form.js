@@ -64,7 +64,9 @@
 	const submitButton = form ? form.querySelector( '[type="submit"]' ) : null;
 
 	document.querySelectorAll( '[data-open-modal="contact-modal"]' ).forEach( function( button ) {
-		button.addEventListener( 'click', function() {
+		button.addEventListener( 'click', function( event ) {
+			event.preventDefault();
+
 			if ( typeof modal.showModal === 'function' ) {
 				modal.showModal();
 				return;

@@ -1,7 +1,21 @@
-.notes-on-article {
-	display: block;
-	text-align: center;
-	font-weight: 400;
-	font-size: 14px;
-	margin: 0;
+.portfolio-post-container {
+	text-align: justify; 
+	max-width: 768px;
+	margin: 0 auto;
+
+	.notes-on-article {
+		display: block;
+		text-align: center;
+		font-weight: 400;
+		font-size: 14px;
+		margin: 0;
+
+		a {
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 }
