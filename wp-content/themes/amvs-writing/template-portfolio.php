@@ -103,7 +103,7 @@
 									$portfolio_item_target = '_blank';
 									$portfolio_item_rel 	 = 'noopener';
 									$portfolio_item_icon 	 =  
-										' <img src="' . get_template_directory_uri() . '/img/up-right-from-square-solid-full.svg" width="18" height="18" alt="" />';
+										' <img src="' . get_template_directory_uri() . '/img/up-right-from-square-solid-full.svg" width="16" height="16" alt="" />';
 								}
 
 								if( !empty( $portfolio_item_categories ) && !is_wp_error( $portfolio_item_categories ) ) {

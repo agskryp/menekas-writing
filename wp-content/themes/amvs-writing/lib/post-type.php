@@ -79,8 +79,29 @@ function amvs_writing_register_portfolio_metabox() {
 			'quicktags'     => false,
 			'textarea_rows' => 5,
 			'tinymce'       => array(
-				'block_formats' => 'Paragraph=p',
+				'block_formats' => 'Paragraph=p;',
 				'toolbar1'      => 'formatselect,bold,italic,link,unlink',
+				'toolbar2'      => '',
+				'toolbar3'      => '',
+			),
+		),
+	) );
+
+	$portfolio_metabox -> add_field( array(
+		'id'          => 'amvs_portfolio_article_transcript_content',
+		'type'        => 'wysiwyg',
+		'name'         => esc_html__( 'Article Transcript', 'amvs-writing' ),
+		'description' => 
+			esc_html__( 
+				'Enter the text of the article if the original source is a screenshot or an image.', 'amvs-writing' 
+			),
+		'options'     => array(
+			'media_buttons' => false,
+			'quicktags'     => false,
+			'textarea_rows' => 10,
+			'tinymce'       => array(
+				'block_formats' => 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4',
+				'toolbar1'      => 'formatselect,bold,italic,link,unlink,alignleft,aligncenter,alignright',
 				'toolbar2'      => '',
 				'toolbar3'      => '',
 			),

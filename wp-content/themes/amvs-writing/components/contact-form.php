@@ -19,6 +19,7 @@
 				type="button"
 				aria-label="<?php esc_attr_e( 'Close contact form', 'amvs-writing' ); ?>"
 				rel="prev"
+				style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/img/xmark-solid-full.svg' ); ?>');"
 				data-close-modal
 			></button>
 		
@@ -27,7 +28,6 @@
 
 		<form id="contact-form" method="post" data-contact-form>
 			<?php wp_nonce_field( 'amvs_contact_form', 'amvs_contact_nonce' ); ?>
-			
 			<input type="hidden" name="action" value="amvs_contact_form">
 
 			<div class="grid">
