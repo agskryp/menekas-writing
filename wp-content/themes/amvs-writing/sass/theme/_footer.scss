@@ -21,6 +21,14 @@
 				text-decoration: none;
 			}
 		}
+
+		.linkedin-icon { 
+			&:active,
+			&:focus,
+			&:hover {
+				color: variables.$secondary-hover;
+			}
+		}
 	}
 
 	.copyright-info {

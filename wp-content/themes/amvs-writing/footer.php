@@ -1,5 +1,6 @@
 <?php
-	$resume_pdf = wp_get_attachment_url( absint( amvs_writings_site_options( 'resume_pdf_id' ) ) );
+	$resume_pdf   = wp_get_attachment_url( absint( amvs_writings_site_options( 'resume_pdf_id' ) ) );
+	$linkedin_url = amvs_writings_site_options( 'linkedin_url' );
 ?>
 
 <footer class="site-footer">
@@ -16,6 +17,21 @@
 			<li>
 				<a href="#" data-open-modal="contact-modal" aria-haspopup="dialog">Contact Me</a>
 			</li>
+			
+			<?php if( !empty( $linkedin_url ) ) { ?>
+				<li>
+					<a 
+						class="linkedin-icon" 
+						href="<?php echo esc_url( $linkedin_url ); ?>" 
+						target="_blank" 
+						rel="noopener"
+					>
+						<span class="screen-reader-text">Connect with me on LinkedIn</span>
+
+						<?php get_template_part( 'components/icon-linkedin' ); ?>
+					</a>
+				</li>
+			<?php } ?>
 		</ul>
 	</nav>
 

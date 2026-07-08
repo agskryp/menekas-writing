@@ -1,6 +1,7 @@
-<?
-	$home_class = is_page_template( 'template-home.php' ) ? ' home-page-container' : '';
+<?php
+	$home_class 	 = is_page_template( 'template-home.php' ) ? ' home-page-container' : '';
 	$title_element = is_front_page() ? 'h1' : 'p';
+	$linkedin_url  = amvs_writings_site_options( 'linkedin_url' );
 ?>
 
 <!doctype html>
@@ -52,6 +53,19 @@
 						<span aria-hidden="true"></span>
 						<span aria-hidden="true"></span>
 					</button>
+
+					<?php if( !empty( $linkedin_url ) ) { ?>
+						<a 
+							class="linkedin-icon" 
+							href="<?php echo esc_url( $linkedin_url ); ?>" 
+							target="_blank" 
+							rel="noopener"
+						>
+							<span class="screen-reader-text">Connect with me on LinkedIn</span>
+
+							<?php get_template_part( 'components/icon-linkedin' ); ?>
+						</a>
+					<?php } ?>
 
 					<?php
 						wp_nav_menu( array(

@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: a.g.skryp
 Author URI: https://www.agskryp.com
 Description: A portfolio theme for Menaka's written work.
-Version: 1.0.0
+Version: 1.0.2
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -3259,6 +3259,11 @@ p {
   font-weight: 200;
 }
 
+.linkedin-icon {
+  font-size: 32px;
+  display: flex;
+}
+
 .site-footer {
   background: #502700;
   color: #FFFAF0;
@@ -3275,6 +3280,9 @@ p {
 }
 .site-footer .footer-nav a:active, .site-footer .footer-nav a:focus, .site-footer .footer-nav a:hover {
   text-decoration: none;
+}
+.site-footer .footer-nav .linkedin-icon:active, .site-footer .footer-nav .linkedin-icon:focus, .site-footer .footer-nav .linkedin-icon:hover {
+  color: #FEC9A7;
 }
 .site-footer .copyright-info {
   display: flex;
@@ -3303,6 +3311,20 @@ p {
 .site-header .nav-container {
   display: flex;
   align-items: center;
+}
+.site-header .nav-container .linkedin-icon {
+  margin: 34px auto;
+  color: #502700;
+  order: 1;
+}
+@media (min-width: 768px) {
+  .site-header .nav-container .linkedin-icon {
+    margin: 0 15px 0 0;
+    order: 0;
+  }
+}
+.site-header .nav-container .linkedin-icon:active, .site-header .nav-container .linkedin-icon:focus, .site-header .nav-container .linkedin-icon:hover {
+  color: #6B5000;
 }
 .site-header .nav-container .main-menu {
   display: inline-flex;
@@ -3414,7 +3436,7 @@ p {
   }
   .site-header .nav-container button:not(.mobile-menu-close) {
     width: 100%;
-    margin: 20px 0 0;
+    margin: 17px 0 0;
   }
   .site-header .nav-container.is-open {
     transform: translateX(0);

@@ -7,8 +7,8 @@
 		'post_type'      => 'portfolio',
 		'posts_per_page' => -1,
 		'post_status'    => 'publish',
-		'orderby'        => 'title',
-		'order'          => 'ASC',
+		'orderby'        => 'date',
+		'order'          => 'DESC',
 	) );
 
 	$portfolio_post_ids 	= wp_list_pluck( $portfolio_posts -> posts, 'ID' );

@@ -11,9 +11,8 @@ function amvs_writings_register_site_options() {
 		'option_key'   => 'amvs_writings_site_options',
 	) );
 
-	$site_options->add_field( array(
+	$site_options -> add_field( array(
 		'name'       => esc_html__( 'Resume PDF', 'amvs-writing' ),
-		// 'desc'       => esc_html__( 'Upload the PDF file linked in the footer.', 'amvs-writing' ),
 		'id'         => 'resume_pdf',
 		'type'       => 'file',
 		'query_args' => array(
@@ -22,6 +21,12 @@ function amvs_writings_register_site_options() {
 		'options'    => array(
 			'url' => false,
 		),
+	) );
+
+	$site_options -> add_field( array(
+		'name' => esc_html__( 'LinkedIn Profile URL', 'amvs-writing' ),
+		'id'   => 'linkedin_url',
+		'type' => 'text_url',
 	) );
 }
 add_action( 'cmb2_admin_init', 'amvs_writings_register_site_options' );

@@ -24,6 +24,22 @@
 	.nav-container {
 		display: flex;
 		align-items: center;
+
+		.linkedin-icon {
+			margin: 34px auto;
+			color: variables.$text-color;
+			order: 1;
+			@media (min-width: 768px) {
+				margin: 0 15px 0 0;
+				order: 0;
+			}
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: variables.$primary-hover;
+			}
+		}
 		
 		.main-menu {
 			display: inline-flex;
@@ -157,7 +173,7 @@
 
 			button:not(.mobile-menu-close) {
 				width: 100%;
-				margin: 20px 0 0;
+				margin: 17px 0 0;
 			}
 		}
 
