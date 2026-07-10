@@ -20,7 +20,7 @@
     "compile:about-js": "esbuild js/polaroid-carousel.js --minify --outfile=dist/about.js",
     "compile:portfolio-js": "esbuild js/writings-filter.js --bundle --minify --outfile=dist/portfolio.js",
     "compile:main-js": "esbuild js/contact-form.js --minify --outfile=dist/main.js",
-    "compile": "npm-run-all --parallel compile:sass compile:typed-js compile:polaroid-js",
+    "compile": "npm-run-all --parallel compile:sass compile:home-js compile:about-js compile:portfolio-js compile:main-js",
     "watch:sass": "sass --watch sass/style.scss style.css --style=expanded",
     "watch:home-js": "esbuild --watch js/typed-text.js --bundle --minify --outfile=dist/home.js",
     "watch:about-js": "esbuild --watch js/polaroid-carousel.js --minify --outfile=dist/about.js",
