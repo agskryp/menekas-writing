@@ -5,7 +5,7 @@
 		margin: 40px var(--pico-block-spacing-horizontal) 20px;
 
 		nav {
-			background: variables.$secondary;
+			background: variables.$primary;
 			border-radius: 20px;
 			max-width: 470px;
 			padding: 20px;
@@ -36,11 +36,15 @@
 					}
 				}
 			}
+
+			span {
+				color: variables.$background-color;
+			}
 		}
 
 		a {
 			font-weight: 500;
-			color: variables.$text-color;
+			color: variables.$background-color;
 			margin: 0;
 			font-size: 16px;
     	text-align: center;
@@ -91,8 +95,8 @@
 		}
 
 		a {
-			background: variables.$secondary;
-			color: variables.$text-color;
+			background: variables.$primary;
+			color: variables.$background-color;
 			width: 100%;
 			display: block;
 			height: 100%;
@@ -109,7 +113,7 @@
 			&:active,
 			&:focus,
 			&:hover {
-				background: variables.$secondary-hover;
+				background: variables.$primary-hover;
 			}
 		}
 	}
