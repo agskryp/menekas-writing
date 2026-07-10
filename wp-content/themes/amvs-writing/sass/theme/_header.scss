@@ -158,6 +158,7 @@
 			box-shadow: -12px 0 32px rgba(80, 39, 0, 0.18);
 			transform: translateX(100%);
 			visibility: hidden;
+			pointer-events: none;
 			transition: transform 220ms ease, visibility 220ms ease;
 
 			.main-menu {
@@ -188,6 +189,7 @@
 		.nav-container.is-open {
 			transform: translateX(0);
 			visibility: visible;
+			pointer-events: auto;
 		}
 	}
 }

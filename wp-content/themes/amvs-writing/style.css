@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: a.g.skryp
 Author URI: https://www.agskryp.com
 Description: A portfolio theme for Menaka's written work.
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -3190,7 +3190,7 @@ textarea,
   color-scheme: light;
   --pico-background-color: #F9EEE6;
   --pico-color: #2F2F2F;
-  --pico-text-selection-color: rgba(#2F2F2F, 0.25);
+  --pico-text-selection-color: rgba(47, 47, 47, 0.25);
   --pico-muted-color: #7B8D73;
   --pico-muted-border-color: rgb(149.4, 163.8, 143);
   --pico-primary: #B25E45;
@@ -3429,6 +3429,7 @@ p {
     box-shadow: -12px 0 32px rgba(80, 39, 0, 0.18);
     transform: translateX(100%);
     visibility: hidden;
+    pointer-events: none;
     transition: transform 220ms ease, visibility 220ms ease;
   }
   .site-header .nav-container .main-menu {
@@ -3454,6 +3455,7 @@ p {
   .site-header .nav-container.is-open {
     transform: translateX(0);
     visibility: visible;
+    pointer-events: auto;
   }
 }
 .home-page-container {

@@ -19,7 +19,7 @@ $img-dir: '../amvs-writing/';
   color-scheme: light;
   --pico-background-color: #{$background-color};
   --pico-color: #{$text-color};
-  --pico-text-selection-color: rgba(#{$text-color}, 0.25);
+  --pico-text-selection-color: #{rgba($text-color, 0.25)};
   --pico-muted-color: #{$secondary};
   --pico-muted-border-color: #{color.scale($secondary, $lightness: +20%)};
   --pico-primary: #{$primary};
