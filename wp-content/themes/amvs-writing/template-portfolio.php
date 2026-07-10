@@ -55,7 +55,7 @@
 						<span><?php esc_html_e( 'Filter by:', 'amvs-writing' ); ?></span>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( home_url( '/portfolio/' ) ); ?>" data-filter="*">
+						<a href="#" data-filter="*">
 							<?php esc_html_e( 'All', 'amvs-writing' ); ?>
 						</a>
 					</li>
@@ -66,7 +66,7 @@
 					?>
 						<li>
 							<a
-								href="#portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category -> slug ) ); ?>"
+								href="#"
 								data-filter=".portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category -> slug ) ); ?>"
 							>
 								<?php echo esc_html( $portfolio_category->name ); ?>

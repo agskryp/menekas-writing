@@ -3,11 +3,12 @@
 // amvs-writing theme colors
 $white: #FFFFFF;
 $background-color: #F9EEE6; // Orangesicle
-$header-background-color: #{color.scale($background-color, $lightness: -10%)}; // Orangesicle
+$header-background-color: #fdefdf; // Orangesicle
 $text-color: #2F2F2F; // Charcoal
 $primary: #A65740; 
 $primary-hover: #843520;
-$secondary: #7B8D73; // Sage Green
+// $secondary: #7B8D73; // Sage Green
+$secondary: #8B9D83;
 $secondary-hover: #596B51;
 
 // img dir

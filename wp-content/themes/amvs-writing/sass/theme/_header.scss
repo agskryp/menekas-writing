@@ -28,7 +28,7 @@
 
 		.linkedin-icon {
 			margin: 34px auto;
-			color: variables.$text-color;
+			color: variables.$primary;
 			order: 1;
 			@media (min-width: 768px) {
 				margin: 0 15px 0 0;
@@ -46,14 +46,14 @@
 			display: inline-flex;
 
 			a {
-				color: variables.$text-color;
+				color: variables.$primary;
 				font-weight: 500;
 
 				&:active,
 				&:focus,
 				&:hover {
-					color: variables.$text-color;
-					--pico-underline: variables.$text-color;
+					color: variables.$primary;
+					--pico-underline: variables.$primary;
 				}
 			}
 		}
@@ -63,6 +63,8 @@
 			background-color: variables.$primary;
 			font-weight: 500;
 			color: variables.$background-color;
+			padding: 10px 20px;
+    	border-radius: 25px;
 
 			&:active,
 			&:focus,

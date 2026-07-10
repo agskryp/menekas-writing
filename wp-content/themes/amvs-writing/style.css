@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: a.g.skryp
 Author URI: https://www.agskryp.com
 Description: A portfolio theme for Menaka's written work.
-Version: 1.0.5
+Version: 1.0.6
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -3191,8 +3191,8 @@ textarea,
   --pico-background-color: #F9EEE6;
   --pico-color: #2F2F2F;
   --pico-text-selection-color: rgba(47, 47, 47, 0.25);
-  --pico-muted-color: #7B8D73;
-  --pico-muted-border-color: rgb(149.4, 163.8, 143);
+  --pico-muted-color: #8B9D83;
+  --pico-muted-border-color: rgb(162.2, 176.6, 155.8);
   --pico-primary: #A65740;
   --pico-primary-background: #A65740;
   --pico-primary-underline: rgba(#A65740, 0.5);
@@ -3200,9 +3200,9 @@ textarea,
   --pico-primary-hover-background: rgb(105.6, 42.4, 25.6);
   --pico-primary-focus: rgba(#843520, 0.5);
   --pico-primary-inverse: $white;
-  --pico-secondary: #7B8D73;
-  --pico-secondary-background: #7B8D73;
-  --pico-secondary-underline: rgba(#7B8D73, 0.5);
+  --pico-secondary: #8B9D83;
+  --pico-secondary-background: #8B9D83;
+  --pico-secondary-underline: rgba(#8B9D83, 0.5);
   --pico-secondary-hover: #596B51;
   --pico-secondary-hover-background: rgb(71.2, 85.6, 64.8);
   --pico-secondary-focus: rgba(#596B51, 0.5);
@@ -3224,7 +3224,7 @@ textarea,
   --pico-mark-color: #0f1114;
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: rgb(243, 244.5, 246.75);
-  --pico-code-color: #7B8D73;
+  --pico-code-color: #8B9D83;
   --pico-form-element-background-color: #F9EEE6;
   --pico-form-element-border-color: #596B51;
   --pico-form-element-color: #2F2F2F;
@@ -3270,19 +3270,20 @@ p {
   padding: 20px 0;
 }
 .site-footer a {
-  color: rgb(239.7290322581, 211.7322580645, 191.3709677419);
+  color: #8B9D83;
 }
 .site-footer .footer-nav {
   justify-content: center;
 }
 .site-footer .footer-nav a {
-  text-decoration: underline;
-}
-.site-footer .footer-nav a:active, .site-footer .footer-nav a:focus, .site-footer .footer-nav a:hover {
+  font-weight: 500;
   text-decoration: none;
 }
+.site-footer .footer-nav a:active, .site-footer .footer-nav a:focus, .site-footer .footer-nav a:hover {
+  text-decoration: underline;
+}
 .site-footer .footer-nav .linkedin-icon:active, .site-footer .footer-nav .linkedin-icon:focus, .site-footer .footer-nav .linkedin-icon:hover {
-  color: #F9EEE6;
+  color: #596B51;
 }
 .site-footer .copyright-info {
   display: flex;
@@ -3298,11 +3299,18 @@ p {
     flex-direction: row;
   }
 }
+.site-footer .copyright-info small a {
+  font-weight: 500;
+  text-decoration: none;
+}
+.site-footer .copyright-info small a:active, .site-footer .copyright-info small a:focus, .site-footer .copyright-info small a:hover {
+  text-decoration: underline;
+}
 
 .site-header {
   padding: 10px 0;
-  border-bottom: 1px solid #7B8D73;
-  background: rgb(239.7290322581, 211.7322580645, 191.3709677419);
+  border-bottom: 1px solid #8B9D83;
+  background: #fdefdf;
 }
 .site-header nav.container {
   display: flex;
@@ -3323,7 +3331,7 @@ p {
 }
 .site-header .nav-container .linkedin-icon {
   margin: 34px auto;
-  color: #2F2F2F;
+  color: #A65740;
   order: 1;
 }
 @media (min-width: 768px) {
@@ -3339,18 +3347,20 @@ p {
   display: inline-flex;
 }
 .site-header .nav-container .main-menu a {
-  color: #2F2F2F;
+  color: #A65740;
   font-weight: 500;
 }
 .site-header .nav-container .main-menu a:active, .site-header .nav-container .main-menu a:focus, .site-header .nav-container .main-menu a:hover {
-  color: #2F2F2F;
-  --pico-underline: variables.$text-color;
+  color: #A65740;
+  --pico-underline: variables.$primary;
 }
 .site-header .nav-container button.cta-button {
   margin: 0 0 0 20px;
   background-color: #A65740;
   font-weight: 500;
   color: #F9EEE6;
+  padding: 10px 20px;
+  border-radius: 25px;
 }
 .site-header .nav-container button.cta-button:active, .site-header .nav-container button.cta-button:focus, .site-header .nav-container button.cta-button:hover {
   background-color: #843520;
@@ -3424,7 +3434,7 @@ p {
     width: min(320px, 86vw);
     padding: 72px 24px 24px;
     overflow-y: auto;
-    background: rgb(239.7290322581, 211.7322580645, 191.3709677419);
+    background: #fdefdf;
     border-left: 1px solid #596B51;
     box-shadow: -12px 0 32px rgba(80, 39, 0, 0.18);
     transform: translateX(100%);
@@ -3622,15 +3632,15 @@ p {
 }
 
 .contact-form-container {
-  background: rgb(239.7290322581, 211.7322580645, 191.3709677419);
+  background: #fdefdf;
 }
 .contact-form-container header {
-  background: rgb(239.7290322581, 211.7322580645, 191.3709677419);
+  background: #fdefdf;
   align-items: center;
   justify-content: space-between;
   display: flex;
   flex-direction: row-reverse;
-  border-color: #7B8D73;
+  border-color: #8B9D83;
 }
 .contact-form-container header button[rel=prev] {
   background-size: 2rem;
