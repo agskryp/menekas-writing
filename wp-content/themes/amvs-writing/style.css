@@ -3270,7 +3270,7 @@ p {
   padding: 20px 0;
 }
 .site-footer a {
-  color: #7B8D73;
+  color: rgb(239.7290322581, 211.7322580645, 191.3709677419);
 }
 .site-footer .footer-nav {
   justify-content: center;
@@ -3282,17 +3282,26 @@ p {
   text-decoration: none;
 }
 .site-footer .footer-nav .linkedin-icon:active, .site-footer .footer-nav .linkedin-icon:focus, .site-footer .footer-nav .linkedin-icon:hover {
-  color: #596B51;
+  color: #F9EEE6;
 }
 .site-footer .copyright-info {
   display: flex;
   justify-content: space-between;
   padding: var(--pico-nav-element-spacing-vertical) var(--pico-nav-element-spacing-horizontal);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+@media all and (min-width: 768px) {
+  .site-footer .copyright-info {
+    flex-direction: row;
+  }
 }
 
 .site-header {
   padding: 10px 0;
-  border-bottom: 1px solid #596B51;
+  border-bottom: 1px solid #7B8D73;
   background: rgb(239.7290322581, 211.7322580645, 191.3709677419);
 }
 .site-header nav.container {
@@ -3619,6 +3628,7 @@ p {
   justify-content: space-between;
   display: flex;
   flex-direction: row-reverse;
+  border-color: #7B8D73;
 }
 .contact-form-container header button[rel=prev] {
   background-size: 2rem;

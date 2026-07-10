@@ -51,11 +51,15 @@ add_action( 'init', 'amvs_writing_register_portfolio_post_type' );
 
 function amvs_writing_register_portfolio_metabox() {
 	$portfolio_metabox = new_cmb2_box( array(
-		'id'           => 'amvs_writing_metabox',
-		'title'        => esc_html__( 'Item Details', 'amvs-writing' ),
-		'object_types' => array( 'portfolio' ),
-		'context'      => 'normal',
-		'priority'     => 'default',
+		'id'               => 'amvs_writing_metabox',
+		'title'            => esc_html__( 'Item Details', 'amvs-writing' ),
+		'object_types'     => array( 'portfolio' ),
+		'context'          => 'normal',
+		'priority'         => 'default',
+		'mb_callback_args' => array(
+			'__block_editor_compatible_meta_box' => true,
+			'__back_compat_meta_box'             => false,
+		),
 	) );
 
 	$portfolio_metabox -> add_field( array(
@@ -76,7 +80,7 @@ function amvs_writing_register_portfolio_metabox() {
 			),
 		'options'     => array(
 			'media_buttons' => false,
-			'quicktags'     => false,
+			'quicktags'     => true,
 			'textarea_rows' => 5,
 			'tinymce'       => array(
 				'block_formats' => 'Paragraph=p;',
@@ -97,7 +101,7 @@ function amvs_writing_register_portfolio_metabox() {
 			),
 		'options'     => array(
 			'media_buttons' => false,
-			'quicktags'     => false,
+			'quicktags'     => true,
 			'textarea_rows' => 10,
 			'tinymce'       => array(
 				'block_formats' => 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4',

@@ -6,7 +6,7 @@
 	padding: 20px 0;
 
 	a {
-		color: variables.$secondary;
+		color: variables.$header-background-color;
 	}
 
 	.footer-nav {
@@ -26,7 +26,7 @@
 			&:active,
 			&:focus,
 			&:hover {
-				color: variables.$secondary-hover;
+				color: variables.$background-color;
 			}
 		}
 	}
@@ -35,5 +35,12 @@
 		display: flex; 
 		justify-content: space-between;
 		padding: var(--pico-nav-element-spacing-vertical) var(--pico-nav-element-spacing-horizontal);
+		flex-direction: column;
+    align-items: center;
+		text-align: center;
+    gap: 20px;
+		@media all and ( min-width: 768px ) {
+			flex-direction: row;
+		}
 	}
 }

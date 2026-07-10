@@ -9,16 +9,11 @@
     justify-content: space-between;
     display: flex;
     flex-direction: row-reverse;
+		border-color: variables.$secondary;
 
 		button[rel=prev] {
 			background-size: 2rem;
 			background-image: url( variables.$img-dir + 'img/xmark-solid-full.svg' );
-
-			// &:active,
-			// &:focus,
-			// &:hover {
-			// 	opacity: .6;
-			// }
 		}
 
 		h2 {
