@@ -1,33 +1,22 @@
 <?php
 
 function amvs_writing_typed_categories_shortcode() {
-	$portfolio_posts = get_posts(	array(
-		'post_type'      => 'portfolio',
-		'posts_per_page' => -1,
-		'post_status'    => 'publish',
-		'fields'         => 'ids',
-	) );
+	$typed_categories = amvs_writings_site_options( 'typed_categories', array() );
 
-	if ( empty( $portfolio_posts ) ) {
+	if ( empty( $typed_categories ) || ! is_array( $typed_categories ) ) {
 		return '';
 	}
 
-	$portfolio_categories = get_terms( array(
-		'taxonomy'   => 'category',
-		'hide_empty' => true,
-		'object_ids' => $portfolio_posts,
-		'orderby'    => 'name',
-		'order'      => 'ASC',
-	) );
+	$typed_categories = array_filter( array_map( 'trim', $typed_categories ) );
 
-	if ( empty( $portfolio_categories ) || is_wp_error( $portfolio_categories ) ) {
+	if ( empty( $typed_categories ) ) {
 		return '';
 	}
 
 	$output = '<span id="typed-strings">';
 
-	foreach ( $portfolio_categories as $portfolio_category ) {
-		$output .= '<span>' . esc_html( $portfolio_category->name ) . '</span>';
+	foreach ( $typed_categories as $typed_category ) {
+		$output .= '<span>' . esc_html( $typed_category ) . '</span>';
 	}
 
 	$output .= '</span>';

@@ -28,6 +28,14 @@ function amvs_writings_register_site_options() {
 		'id'   => 'linkedin_url',
 		'type' => 'text_url',
 	) );
+
+	$site_options -> add_field( array(
+		'name'       => esc_html__( 'Typed Categories', 'amvs-writing' ),
+		'desc'       => esc_html__( 'Add each word or phrase to display in the typed categories shortcode.', 'amvs-writing' ),
+		'id'         => 'typed_categories',
+		'type'       => 'text',
+		'repeatable' => true,
+	) );
 }
 add_action( 'cmb2_admin_init', 'amvs_writings_register_site_options' );
 
