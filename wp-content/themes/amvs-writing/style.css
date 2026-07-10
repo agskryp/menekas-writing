@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: a.g.skryp
 Author URI: https://www.agskryp.com
 Description: A portfolio theme for Menaka's written work.
-Version: 1.0.4
+Version: 1.0.5
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -3193,12 +3193,12 @@ textarea,
   --pico-text-selection-color: rgba(47, 47, 47, 0.25);
   --pico-muted-color: #7B8D73;
   --pico-muted-border-color: rgb(149.4, 163.8, 143);
-  --pico-primary: #B25E45;
-  --pico-primary-background: #B25E45;
-  --pico-primary-underline: rgba(#B25E45, 0.5);
-  --pico-primary-hover: #903C23;
-  --pico-primary-hover-background: rgb(115.2, 48, 28);
-  --pico-primary-focus: rgba(#903C23, 0.5);
+  --pico-primary: #A65740;
+  --pico-primary-background: #A65740;
+  --pico-primary-underline: rgba(#A65740, 0.5);
+  --pico-primary-hover: #843520;
+  --pico-primary-hover-background: rgb(105.6, 42.4, 25.6);
+  --pico-primary-focus: rgba(#843520, 0.5);
   --pico-primary-inverse: $white;
   --pico-secondary: #7B8D73;
   --pico-secondary-background: #7B8D73;
@@ -3333,7 +3333,7 @@ p {
   }
 }
 .site-header .nav-container .linkedin-icon:active, .site-header .nav-container .linkedin-icon:focus, .site-header .nav-container .linkedin-icon:hover {
-  color: #903C23;
+  color: #843520;
 }
 .site-header .nav-container .main-menu {
   display: inline-flex;
@@ -3348,12 +3348,12 @@ p {
 }
 .site-header .nav-container button.cta-button {
   margin: 0 0 0 20px;
-  background-color: #B25E45;
+  background-color: #A65740;
   font-weight: 500;
   color: #F9EEE6;
 }
 .site-header .nav-container button.cta-button:active, .site-header .nav-container button.cta-button:focus, .site-header .nav-container button.cta-button:hover {
-  background-color: #903C23;
+  background-color: #843520;
 }
 .site-header .mobile-menu-toggle,
 .site-header .mobile-menu-close {
@@ -3400,7 +3400,7 @@ p {
     color: #2F2F2F;
   }
   .site-header .mobile-menu-close:active, .site-header .mobile-menu-close:focus, .site-header .mobile-menu-close:hover {
-    color: #B25E45;
+    color: #A65740;
   }
   .site-header .mobile-menu-close span[aria-hidden=true] {
     position: absolute;
@@ -3515,7 +3515,7 @@ p {
   margin: 40px var(--pico-block-spacing-horizontal) 20px;
 }
 .amvs-portfolio-container .portfolio-list-filter nav {
-  background: #B25E45;
+  background: #A65740;
   border-radius: 20px;
   max-width: 470px;
   padding: 20px;
@@ -3602,7 +3602,7 @@ p {
   font-weight: 700;
 }
 .amvs-portfolio-container article a {
-  background: #B25E45;
+  background: #A65740;
   color: #F9EEE6;
   width: 100%;
   display: block;
@@ -3618,7 +3618,7 @@ p {
   text-decoration: none;
 }
 .amvs-portfolio-container article a:active, .amvs-portfolio-container article a:focus, .amvs-portfolio-container article a:hover {
-  background: #903C23;
+  background: #843520;
 }
 
 .contact-form-container {

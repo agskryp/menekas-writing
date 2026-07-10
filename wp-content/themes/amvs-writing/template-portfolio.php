@@ -66,7 +66,7 @@
 					?>
 						<li>
 							<a
-								href="<?= esc_url( home_url( '/portfolio/' . $portfolio_category -> slug . '/' ) ); ?>"
+								href="#portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category -> slug ) ); ?>"
 								data-filter=".portfolio-category-<?php echo esc_attr( sanitize_html_class( $portfolio_category -> slug ) ); ?>"
 							>
 								<?php echo esc_html( $portfolio_category->name ); ?>
