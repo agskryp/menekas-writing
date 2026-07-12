@@ -5,11 +5,11 @@
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	min-height: 100dvh;
-}
 
-.home-page-container .main-container {
-	display: grid;
-	min-height: 0;
+	.main-container {
+		display: grid;
+		min-height: 0;
+	}
 }
 
 .home-template-hero {
