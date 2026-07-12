@@ -7,6 +7,12 @@
 
 	$notes_on_article 	= get_post_meta( $post_id, 'amvs_portfolio_notes_on_article_content', true );
 	$article_transcript = get_post_meta( $post_id, 'amvs_portfolio_article_transcript_content', true );
+	$published_url			= get_post_meta( $post_id, 'amvs_published_url', true );
+
+	if( !empty( $published_url ) ) {
+		wp_safe_redirect( home_url( '/portfolio/' ) );
+		exit;
+	}
 
 	get_header();
 ?>
