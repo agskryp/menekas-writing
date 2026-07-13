@@ -21,6 +21,20 @@ if ( ! function_exists( 'amvs_writing_contact_recaptcha_enabled' ) ) {
 	}
 }
 
+if ( ! function_exists( 'amvs_writing_contact_from_email' ) ) {
+	function amvs_writing_contact_from_email() {
+		$host = wp_parse_url( home_url(), PHP_URL_HOST );
+
+		if ( ! $host ) {
+			return get_option( 'admin_email' );
+		}
+
+		$host = preg_replace( '/^www\./', '', strtolower( $host ) );
+
+		return 'no-reply@' . sanitize_text_field( $host );
+	}
+}
+
 if ( ! function_exists( 'amvs_writing_verify_contact_recaptcha' ) ) {
 	function amvs_writing_verify_contact_recaptcha( $token = '' ) {
 		if ( ! amvs_writing_contact_recaptcha_enabled() ) {
@@ -104,6 +118,15 @@ if ( ! function_exists( 'amvs_writing_handle_contact_form' ) ) {
 			);
 		}
 
+		$recipient = sanitize_email( get_option( 'admin_email' ) );
+
+		if ( ! is_email( $recipient ) ) {
+			return array(
+				'success' => false,
+				'message' => __( 'The contact form is not configured correctly. Please try again later.', 'amvs-writing' ),
+			);
+		}
+
 		$mail_subject =  __( 'A new message from ' . get_bloginfo( 'name' ), 'amvs-writing' );
 
 		$mail_body    = sprintf(
@@ -115,10 +138,15 @@ if ( ! function_exists( 'amvs_writing_handle_contact_form' ) ) {
 
 		$headers      = array(
 			'Content-Type: text/plain; charset=UTF-8',
+			sprintf(
+				'From: %s <%s>',
+				wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ),
+				amvs_writing_contact_from_email()
+			),
 			sprintf( 'Reply-To: %s <%s>', $name, $email ),
 		);
 
-		if ( !wp_mail( get_option( 'admin_email' ), $mail_subject, $mail_body, $headers ) ) {
+		if ( ! wp_mail( $recipient, $mail_subject, $mail_body, $headers ) ) {
 			return array(
 				'success' => false,
 				'message' => __( 'The message could not be sent. Please try again later.', 'amvs-writing' ),
@@ -147,10 +175,16 @@ if ( ! function_exists( 'amvs_writing_ajax_contact_form' ) ) {
 		wp_send_json_error(
 			array(
 				'message' => $result['message'],
-			),
-			400
+			)
 		);
 	}
 }
 add_action( 'wp_ajax_amvs_contact_form', 'amvs_writing_ajax_contact_form' );
 add_action( 'wp_ajax_nopriv_amvs_contact_form', 'amvs_writing_ajax_contact_form' );
+
+add_action(
+	'wp_mail_failed',
+	function( $error ) {
+		error_log( 'AMVS contact form mail failed: ' . $error->get_error_message() );
+	}
+);

@@ -145,10 +145,16 @@
 
 		setSubmitting( true );
 
+		const formData = new FormData( form );
+
+		if ( window.amvsContactForm && window.amvsContactForm.action ) {
+			formData.set( 'action', window.amvsContactForm.action );
+		}
+
 		fetch( window.amvsContactForm.ajaxUrl, {
 			method: 'POST',
 			credentials: 'same-origin',
-			body: new FormData( form ),
+			body: formData,
 		} )
 			.then( function( response ) {
 				return response.json().then( function( body ) {

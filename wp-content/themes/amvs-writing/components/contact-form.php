@@ -28,6 +28,7 @@
 
 		<form id="contact-form" method="post" data-contact-form>
 			<?php wp_nonce_field( 'amvs_contact_form', 'amvs_contact_nonce' ); ?>
+			
 			<input type="hidden" name="action" value="amvs_contact_form">
 
 			<div class="grid">
