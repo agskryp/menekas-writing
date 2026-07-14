@@ -23,7 +23,15 @@ if ( ! function_exists( 'amvs_writing_contact_recaptcha_enabled' ) ) {
 
 if ( ! function_exists( 'amvs_writing_contact_from_email' ) ) {
 	function amvs_writing_contact_from_email() {
-		return 'hello@menakaskrypnyk.com';
+		$host = wp_parse_url( home_url(), PHP_URL_HOST );
+
+		if ( ! $host ) {
+			return get_option( 'admin_email' );
+		}
+
+		$host = preg_replace( '/^www\./', '', strtolower( $host ) );
+
+		return 'no-reply@' . sanitize_text_field( $host );
 	}
 }
 
