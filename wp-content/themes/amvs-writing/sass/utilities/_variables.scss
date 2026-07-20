@@ -2,8 +2,8 @@
 
 // amvs-writing theme colors
 $white: #FFFFFF;
-$background-color: #F9EEE6; // Orangesicle
-$header-background-color: #fdefdf; // Orangesicle
+$primary-background-color: #F9EEE6; // Orangesicle
+$secondary-background-color: #fdefdf; // Orangesicle
 $text-color: #2F2F2F; // Charcoal
 $primary: #A65740; 
 $primary-hover: #843520;
@@ -18,7 +18,7 @@ $img-dir: '../amvs-writing/';
 :root:not([data-theme=dark]),
 :host(:not([data-theme=dark])) {
   color-scheme: light;
-  --pico-background-color: #{$background-color};
+  --pico-background-color: #{$primary-background-color};
   --pico-color: #{$text-color};
   --pico-text-selection-color: #{rgba($text-color, 0.25)};
   --pico-muted-color: #{$secondary};
@@ -55,16 +55,16 @@ $img-dir: '../amvs-writing/';
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: rgb(243, 244.5, 246.75);
   --pico-code-color: #{$secondary};
-  --pico-form-element-background-color: #{$background-color};
+  --pico-form-element-background-color: #{$primary-background-color};
   --pico-form-element-border-color: #{$secondary-hover};
   --pico-form-element-color: #{$text-color};
-  --pico-form-element-active-background-color: #{color.scale($background-color, $lightness: +20%)};;
+  --pico-form-element-active-background-color: #{color.scale($primary-background-color, $lightness: +20%)};;
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-color: $white;
   --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
-  --pico-card-sectioning-background-color: #{$background-color};
+  --pico-card-sectioning-background-color: #{$primary-background-color};
   
 }

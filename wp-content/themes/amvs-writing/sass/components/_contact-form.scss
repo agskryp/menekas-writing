@@ -1,10 +1,10 @@
 @use "../utilities/variables";
 
 .contact-form-container {
-	background: variables.$header-background-color;
+	background: variables.$secondary-background-color;
 
 	header {
-		background: variables.$header-background-color;
+		background: variables.$secondary-background-color;
 		align-items: center;
     justify-content: space-between;
     display: flex;
@@ -23,7 +23,7 @@
 
 	footer {
 		button {
-			color: variables.$background-color;
+			color: variables.$primary-background-color;
 		}
 	}
 }

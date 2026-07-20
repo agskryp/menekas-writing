@@ -34,7 +34,7 @@ function amvs_writing_register_portfolio_post_type() {
 		),
 		'show_in_rest' => true,
 		'supports'     => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies'   => array( 'category' ),
+		'taxonomies'   => array( 'category', 'portfolio_industry' ),
 	);
 
 	register_post_type( 'portfolio', $args );
@@ -46,6 +46,67 @@ function amvs_writing_register_portfolio_post_type() {
 	);
 }
 add_action( 'init', 'amvs_writing_register_portfolio_post_type' );
+
+
+function amvs_writing_register_portfolio_industry_taxonomy() {
+	$labels = array(
+		'name'                       => esc_html__( 'Industries', 'amvs-writing' ),
+		'singular_name'              => esc_html__( 'Industry', 'amvs-writing' ),
+		'menu_name'                  => esc_html__( 'Industries', 'amvs-writing' ),
+		'all_items'                  => esc_html__( 'All Industries', 'amvs-writing' ),
+		'edit_item'                  => esc_html__( 'Edit Industry', 'amvs-writing' ),
+		'view_item'                  => esc_html__( 'View Industry', 'amvs-writing' ),
+		'update_item'                => esc_html__( 'Update Industry', 'amvs-writing' ),
+		'add_new_item'               => esc_html__( 'Add New Industry', 'amvs-writing' ),
+		'new_item_name'              => esc_html__( 'New Industry Name', 'amvs-writing' ),
+		'parent_item'                => esc_html__( 'Parent Industry', 'amvs-writing' ),
+		'parent_item_colon'          => esc_html__( 'Parent Industry:', 'amvs-writing' ),
+		'search_items'               => esc_html__( 'Search Industries', 'amvs-writing' ),
+		'popular_items'              => esc_html__( 'Popular Industries', 'amvs-writing' ),
+		'separate_items_with_commas' => esc_html__( 'Separate industries with commas', 'amvs-writing' ),
+		'add_or_remove_items'        => esc_html__( 'Add or remove industries', 'amvs-writing' ),
+		'choose_from_most_used'      => esc_html__( 'Choose from the most used industries', 'amvs-writing' ),
+		'not_found'                  => esc_html__( 'No industries found.', 'amvs-writing' ),
+		'back_to_items'              => esc_html__( 'Back to industries', 'amvs-writing' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'hierarchical'      => true,
+		'public'            => true,
+		'show_admin_column' => true,
+		'show_in_rest'      => true,
+		'rewrite'           => array(
+			'slug' => 'industry',
+		),
+	);
+
+	register_taxonomy( 'portfolio_industry', array( 'portfolio' ), $args );
+}
+add_action( 'init', 'amvs_writing_register_portfolio_industry_taxonomy' );
+
+
+function amvs_writing_register_portfolio_industry_metabox() {
+	$industry_metabox = new_cmb2_box( array(
+		'id'               => 'amvs_portfolio_industry_metabox',
+		'title'            => esc_html__( 'Industry Details', 'amvs-writing' ),
+		'object_types'     => array( 'term' ),
+		'taxonomies'       => array( 'portfolio_industry' ),
+		'new_term_section' => true,
+	) );
+
+	$industry_metabox -> add_field( array(
+		'name'         => esc_html__( 'Image/Icon', 'amvs-writing' ),
+		'desc'         => esc_html__( 'Upload an image or icon for this industry.', 'amvs-writing' ),
+		'id'           => 'amvs_portfolio_industry_icon',
+		'type'         => 'file',
+		'query_args'   => array(
+			'type' => 'image',
+		),
+		'preview_size' => 'thumbnail',
+	) );
+}
+add_action( 'cmb2_admin_init', 'amvs_writing_register_portfolio_industry_metabox' );
 
 
 

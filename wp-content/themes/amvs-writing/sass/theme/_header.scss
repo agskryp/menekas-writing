@@ -3,8 +3,7 @@
 .site-header {
 	padding: 10px 0;
 	border-bottom: 1px solid variables.$secondary;
-	background: variables.$header-background-color;
-	// background: variables.$secondary;
+	background: variables.$secondary-background-color;
 
 	nav.container {
 		display: flex;
@@ -62,7 +61,7 @@
 			margin: 0 0 0 20px;
 			background-color: variables.$primary;
 			font-weight: 500;
-			color: variables.$background-color;
+			color: variables.$primary-background-color;
 			padding: 10px 20px;
     	border-radius: 25px;
 
@@ -155,7 +154,7 @@
 			width: min(320px, 86vw);
 			padding: 72px 24px 24px;
 			overflow-y: auto;
-			background: variables.$header-background-color;
+			background: variables.$secondary-background-color;
 			border-left: 1px solid variables.$secondary-hover;
 			box-shadow: -12px 0 32px rgba(80, 39, 0, 0.18);
 			transform: translateX(100%);
