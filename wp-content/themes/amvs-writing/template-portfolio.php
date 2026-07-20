@@ -106,7 +106,7 @@
 									$portfolio_item_target = '_blank';
 									$portfolio_item_rel 	 = 'noopener';
 									$portfolio_item_icon 	 =  
-										' <img style="    position: absolute;    top: 30px;    right: 30px;" src="' . get_template_directory_uri() . '/img/up-right-from-square-solid-full.svg" width="26" height="26" alt="" />';
+										' <img src="' . get_template_directory_uri() . '/img/up-right-from-square-solid-full.svg" width="20" height="20" alt="" />';
 								}
 
 								// var_dump( $portfolio_item_industry );
