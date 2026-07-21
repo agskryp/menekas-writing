@@ -106,10 +106,9 @@
 									$portfolio_item_target = '_blank';
 									$portfolio_item_rel 	 = 'noopener';
 									$portfolio_item_icon 	 =  
-										' <img src="' . get_template_directory_uri() . '/img/up-right-from-square-solid-full.svg" width="20" height="20" alt="" />';
+										'<img class="new-page" src="' . get_template_directory_uri() . '/img/up-right-from-square-solid-full.svg" width="20" height="20" alt="" />';
 								}
 
-								// var_dump( $portfolio_item_industry );
 
 								if( 
 									!empty( $portfolio_item_industries ) 
@@ -154,7 +153,9 @@
 									echo $portfolio_item_icon;
 
 									if( !empty( $industry_icon_id ) ) {
-										echo wp_get_attachment_image( $industry_icon_id, array( 50, 50 ) ); 
+										echo wp_get_attachment_image( 
+											$industry_icon_id, array( 50, 50 ), null, array( 'class' => 'industry-icon' ) 
+										); 
 									}
 										
 									echo '<h2>' . get_the_title() . '</h2>'; 

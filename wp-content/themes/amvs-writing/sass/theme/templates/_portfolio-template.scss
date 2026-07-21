@@ -110,9 +110,14 @@
 			&:focus,
 			&:hover {
 				color: variables.$primary-hover;
+				border-color: variables.$secondary-hover;
 
 				.industry {
 					color: variables.$primary-hover;
+				}
+
+				hr {
+					color: variables.$secondary-hover;
 				}
 
 				footer {
@@ -132,7 +137,7 @@
 				font-weight: 700;
 				padding: 30px 30px 0;
 
-				img {
+				img.new-page {
 					position: absolute;
 					top: 30px;
 					right: 30px;
@@ -140,6 +145,7 @@
 
 				h2 {
 					font-size: 24px;
+					margin-top: 15px;
 				}
 			}
 
